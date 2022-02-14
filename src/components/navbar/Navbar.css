@@ -1,0 +1,17 @@
+.main-layout {
+  background-color: #4E6E5D;
+  display: flex;
+  flex-direction: row;
+  width: 20%;
+  text-align: center;
+  padding-bottom: 100%;
+}
+
+.navbar {
+  align-self: center;
+  flex: 1;
+  padding-left: 4%;
+  padding-right: 4%;
+  padding-top: 20vh;
+}
+
