@@ -1,0 +1,25 @@
+$green: #4E6E5D;
+.paper--style {
+  padding: 20px;
+  height: fit-content;
+  max-height: 80vh;
+  width: 280px;
+  margin: 50px auto;
+  .login__fields--margin {
+    margin-bottom: 20px;
+  }
+  .error--red {
+    color: red;
+  }
+
+  :nth-child(4) {
+    margin-top: 20px;
+    font-size: 1.2em;
+  }
+  .avatar__icon {
+    background-color: $green;
+  }
+  .error--red {
+    color: red;
+  }
+}
