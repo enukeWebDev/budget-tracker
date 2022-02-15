@@ -5,6 +5,7 @@ import { NavLink } from 'react-router-dom'
 import HomeIcon from '@mui/icons-material/Home';
 import PointOfSaleIcon from '@mui/icons-material/PointOfSale';
 import HistoryIcon from '@mui/icons-material/History';
+import { grey } from '@mui/material/colors'
 
 
 function Navbar() {
@@ -13,13 +14,13 @@ function Navbar() {
 
       <section className="navbar">
           <div className='home'>
-            <NavLink to="/home"> <HomeIcon fontSize="large" /> </NavLink> 
+            <NavLink to="/home"> <HomeIcon fontSize="large" sx={{ color: grey[50] }}/> </NavLink> 
           </div>
           <div className='allowances'>
-            <NavLink to="/allowances"> <PointOfSaleIcon fontSize='large' /> </NavLink>
+            <NavLink to="/allowances"> <PointOfSaleIcon fontSize='large' sx={{ color: grey[50] }}/> </NavLink>
           </div>
           <div className='expenses'>
-            <NavLink to="/expenses"> <HistoryIcon fontSize='large'/> </NavLink>
+            <NavLink to="/expenses"> <HistoryIcon fontSize='large'sx={{ color: grey[50] }}/> </NavLink>
           </div>
       </section>
 

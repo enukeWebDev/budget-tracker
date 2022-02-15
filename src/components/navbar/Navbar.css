@@ -14,14 +14,17 @@
 }
 
 .home {
-  padding-bottom: 50px;
+  margin-bottom: 50px;
+  padding-right: 40px;
 }
 
 .allowances {
-  padding-bottom: 50px;
+  margin-bottom: 50px;
+  padding-right: 40px;
 }
 
 .expenses {
-  padding-bottom: 50px;
+  margin-bottom: 50px;
+  padding-right: 40px;
 }
 
