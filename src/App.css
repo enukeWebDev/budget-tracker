@@ -31,9 +31,8 @@ body {
   font-family: 'Lato', sans-serif;
 
   flex-direction: column;
-  padding-left: 30%;
+  padding-left: 5%;
   padding-right: 4%;
-
 
 }
 
@@ -62,8 +61,6 @@ h4 {
   margin: 0;
   text-transform: uppercase;
 }
-
-
 
 .money {
   font-size: 20px;
