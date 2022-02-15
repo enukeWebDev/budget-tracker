@@ -1,5 +1,6 @@
 import React, { useContext } from 'react';
 import { GlobalContext } from '../context/GlobalState';
+import './Transaction.css'
 
 
 //Instead of passing props - just in transaction and destructure for simplicity

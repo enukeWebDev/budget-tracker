@@ -1,15 +1,18 @@
 .main-layout {
-  background-color: #4E6E5D;
   display: flex;
+  background-color: #4E6E5D;
+
+  position: fixed;
   flex-direction: row;
   width: 20%;
   text-align: center;
-  padding-bottom: 100%;
+  padding-bottom: 50%;
 }
 
 .navbar {
   align-self: center;
   flex: 1;
+
   padding-left: 4%;
   padding-right: 4%;
   padding-top: 20vh;

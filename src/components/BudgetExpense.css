@@ -1,0 +1,40 @@
+/* .counter-container {
+  background-color: #fff;
+  box-shadow: var(--box-shadow);
+  padding: 20%;
+  display: flex;
+  justify-content: space-between;
+  margin: 20px 0;
+}
+
+.counter-container > div {
+  flex: 1;
+  text-align: center;
+}
+
+.counter-container > div:first-of-type {
+  border-right: 1px solid #dedede;
+} */
+
+.counter-container {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+.money-plus {
+  color: #2ecc71;
+}
+
+.money-minus {
+  color: #c0392b;
+}
+
+.budget {
+  padding-right: 10%;
+  border-color: antiquewhite;
+}
+
+.expense {
+  padding-left: 10%;
+}
