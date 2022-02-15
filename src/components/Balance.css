@@ -1,0 +1,9 @@
+.balance-name{
+  letter-spacing: 1px;
+  margin: 0;
+}
+
+.balance-dollars {
+  margin: 0;
+  text-transform: uppercase;
+}

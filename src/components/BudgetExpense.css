@@ -1,0 +1,48 @@
+/* .counter-container {
+  background-color: #fff;
+  box-shadow: var(--box-shadow);
+  padding: 20%;
+  display: flex;
+  justify-content: space-between;
+  margin: 20px 0;
+}
+
+.counter-container > div {
+  flex: 1;
+  text-align: center;
+}
+
+.counter-container > div:first-of-type {
+  border-right: 1px solid #dedede;
+} */
+
+.counter-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.money-plus {
+  color: #2ecc71;
+}
+
+.money-minus {
+  color: #c0392b;
+}
+
+.budget {
+  text-align: center;
+  outline: 5px solid white;
+  border-radius: 5px;
+  margin: 10px;
+  padding: 5px;
+}
+
+.expense {
+  text-align: center;
+  outline: 5px solid white;
+  border-radius: 5px;
+  margin: 10px;
+  padding: 5px;
+}
