@@ -1,0 +1,23 @@
+$green: #4E6E5D;
+.signup__paper--style {
+  padding: 20px;
+  height: auto;
+  width: 280px;
+  margin: 50px auto;
+  .signup__fields--margin {
+    margin-bottom: 18px;
+  }
+  .error--red {
+    color: red;
+  }
+  :nth-child(6) {
+    margin-top: 20px;
+    font-size: 1.2em;
+  }
+  .avatar__icon {
+    background-color: $green;
+  }
+  .error--red {
+    color: red;
+  }
+}
