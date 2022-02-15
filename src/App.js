@@ -1,20 +1,38 @@
-import Login from "./components/Login";
-import Signup from "./components/Signup";
-import Home from "./components/Home";
-import { Routes, Route} from "react-router-dom";
+import React from 'react';
+import { Header } from './components/Header';
+import { Balance } from './components/Balance';
+import { BudgetExpense } from './components/BudgetExpense';
+import { TransactionList } from './components/TransactionList';
+import { AddTransaction } from './components/AddTransaction';
+import Welcome from './components/Welcome'
+import Navbar from './components/navbar/Navbar'
+
+import { GlobalProvider } from './context/GlobalState';
 
 import './App.css';
 
 function App() {
   return (
-    <main className="layout">
-      <Routes>
-        <Route path="/" element={<Login />} />
-        <Route path="/signup" element={<Signup />} />
-        <Route path="/home" element={<Home />} />
-      </Routes>
-  </main>
-    
+    <GlobalProvider>
+
+      <div className="whole-app">
+        <Navbar />
+        <div className="centre-content">
+          <Welcome />
+          <div className="shape">
+            <Header />
+            <Balance />
+            <BudgetExpense />
+            <TransactionList />
+            <AddTransaction />
+          </div>
+        </div>
+        <div className="right-content">
+          
+        </div>
+      </div>
+
+    </GlobalProvider>
   );
 }
 
