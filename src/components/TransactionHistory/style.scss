@@ -1,0 +1,62 @@
+$red: red;
+$green: #4E6E5D;
+$white :#EBEBEB;
+
+@mixin transaction-display($first-child-color,$last-child-color) {
+ 
+  padding-left: 10px;
+  padding-right: 10px;
+  display: flex;
+  justify-content: space-between;
+  :nth-child(1){
+    color: black;
+  }
+ 
+}
+
+.money__icon {
+  display: flex;
+  .color--red{
+    margin-top: 10px;
+    background-color:rgb(221, 79, 79);
+    border-radius: 20px;
+    font-size: 40px;
+    
+  }
+}
+
+.transaction--layout { 
+  align-content: center;
+  margin: 40px;
+  background-color:$white ; 
+  min-height: 30vh;
+  max-width: 70vh;
+}
+
+.transaction__history__header {
+  margin-top: 10px;
+  @include transaction-display($green, $red);
+  div >p{
+    margin-top: -20px;
+    color: black;
+  }
+  .transaction__heading {
+    padding-left: 5px;
+    margin-top: -10px;
+  }
+  background-color: rgb(190, 185, 185);  
+}
+
+.transaction__content { 
+  @include transaction-display(black,$red);
+  margin-bottom: -15px;
+  padding-top: 0;
+  font-size: 1.2em;
+  font-family: 'roboto,san-serif',  
+ 
+}
+.transaction__container{
+  border-radius: 8px;
+  background-color: $white;
+  
+}
