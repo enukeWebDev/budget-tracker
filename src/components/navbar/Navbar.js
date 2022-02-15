@@ -1,4 +1,6 @@
 import './Navbar.css';
+import React from 'react'
+import NavLink from 'react-router-dom'
 
 
 function Navbar() {
@@ -7,7 +9,7 @@ function Navbar() {
 
       <section className="navbar">
         <h1> nav </h1>
-        <h2 to="/"> Home </h2> 
+        <NavLink to="/home"> Home </NavLink> 
         <h2 to="/allowances"> Allowances </h2>
         <h2 to="/expenses"> Expense History </h2>
       </section>
