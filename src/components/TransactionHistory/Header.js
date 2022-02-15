@@ -3,7 +3,7 @@ import MoneyOffIcon from '@mui/icons-material/MoneyOff';
 function Header(props) {
   
   return (
-    <div className="transaction__history__header">
+    <div className="transaction__history__header" onClick={props.graph}>
      <div className="money__icon">
        <MoneyOffIcon className="color--red"/>
        <div className="transaction__heading">
@@ -15,7 +15,7 @@ function Header(props) {
         </p>
        </div>
      </div>
-     <h2 class="color--red">${props.expense}</h2>
+     <h2 className="color--red">${props.expense}</h2>
      
     </div>
   );

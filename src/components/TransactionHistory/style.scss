@@ -1,34 +1,31 @@
 $red: red;
-$green: #4E6E5D;
-$white :#EBEBEB;
+$green: #4e6e5d;
+$white: #ebebeb;
 
-@mixin transaction-display($first-child-color,$last-child-color) {
- 
+@mixin transaction-display($first-child-color, $last-child-color) {
   padding-left: 10px;
   padding-right: 10px;
   display: flex;
   justify-content: space-between;
-  :nth-child(1){
+  :nth-child(1) {
     color: black;
   }
- 
 }
 
 .money__icon {
   display: flex;
-  .color--red{
+  .color--red {
     margin-top: 10px;
-    background-color:rgb(221, 79, 79);
+    background-color: rgb(221, 79, 79);
     border-radius: 20px;
     font-size: 40px;
-    
   }
 }
 
-.transaction--layout { 
+.transaction--layout {
   align-content: center;
   margin: 40px;
-  background-color:$white ; 
+  background-color: $white;
   min-height: 30vh;
   max-width: 70vh;
 }
@@ -36,7 +33,8 @@ $white :#EBEBEB;
 .transaction__history__header {
   margin-top: 10px;
   @include transaction-display($green, $red);
-  div >p{
+  transition-timing-function: ease-out;
+  div > p {
     margin-top: -20px;
     color: black;
   }
@@ -44,19 +42,35 @@ $white :#EBEBEB;
     padding-left: 5px;
     margin-top: -10px;
   }
-  background-color: rgb(190, 185, 185);  
+  background-color: rgb(190, 185, 185);
+}
+.transaction__history__header:hover {
+  background-color: rgb(150, 144, 144);
+  box-shadow: 2px;
 }
 
-.transaction__content { 
-  @include transaction-display(black,$red);
-  margin-bottom: -15px;
-  padding-top: 0;
+.transaction__content {
+  @include transaction-display(black, $red);
+  height: 60px;
+
   font-size: 1.2em;
-  font-family: 'roboto,san-serif',  
- 
+  font-family: "roboto,san-serif";
+  border-bottom: 1px solid rgb(190, 185, 185);
 }
-.transaction__container{
-  border-radius: 8px;
-  background-color: $white;
-  
+.transaction__content:hover {
+  background-color: antiquewhite;
+}
+.color--red {
+  color: red;
+}
+
+.date--circle {
+  padding-right: 10px;
+  font-size: 1.4em;
+  font-weight: 400;
+}
+
+.date--top {
+  padding-top: -20px;
+  font-size: 0.9em;
 }
