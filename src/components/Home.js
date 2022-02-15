@@ -8,9 +8,9 @@ import { AddTransaction } from './AddTransaction';
 import { GlobalProvider } from '../context/GlobalState';
 import './Home.scss';
 
+
 function Home() {
   return (
-
     <GlobalProvider>
       <Header />
 
