@@ -19,11 +19,13 @@ function App() {
         <Navbar />
         <div className="centre-content">
           <Welcome />
-          <Header />
-          <Balance />
-          <BudgetExpense />
-          <TransactionList />
-          <AddTransaction />
+          <div className="shape">
+            <Header />
+            <Balance />
+            <BudgetExpense />
+            <TransactionList />
+            <AddTransaction />
+          </div>
         </div>
         <div className="right-content">
           

@@ -19,6 +19,7 @@
 .counter-container {
   display: flex;
   justify-content: center;
+  align-items: center;
   text-align: center;
 }
 
@@ -31,10 +32,17 @@
 }
 
 .budget {
-  padding-right: 10%;
-  border-color: antiquewhite;
+  text-align: center;
+  outline: 5px solid white;
+  border-radius: 5px;
+  margin: 10px;
+  padding: 5px;
 }
 
 .expense {
-  padding-left: 10%;
+  text-align: center;
+  outline: 5px solid white;
+  border-radius: 5px;
+  margin: 10px;
+  padding: 5px;
 }
