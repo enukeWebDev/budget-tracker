@@ -4,7 +4,11 @@ import AppReducer from './AppReducer';
 //Initial State - negative number is expense - positive is the budget
 const initialState = {
 
-  transactions: []
+  transactions: [{
+    id:1,
+    amount:100,
+    text:'Budget'
+  }]
 
   // Sample data for testing 
   // transactions: [
