@@ -7,10 +7,10 @@ function PieChart(props){
  // const date  = new Date().toLocaleString() ;
   const { transactions } = useContext(GlobalContext);
   const newTransactions = [...transactions];
+
   let date  = new Date();
-  let currentMonthStartDate  = (new Date(date.getFullYear(), date.getMonth(), 1)).toLocaleDateString();
-  let currentMonthLastDate  = (new Date(date.getFullYear(), date.getMonth()+1, 0)).toLocaleDateString();
-     
+  let currentMonthLastDate  = (new Date(date.getFullYear(), date.getMonth()+1, 0));
+  
   const series = newTransactions.map((item) => item.amount);
   const labels = newTransactions.map((item) => item.text);
   
@@ -52,8 +52,8 @@ function PieChart(props){
         
         }} 
       />
-      <p className="chart__title">
-      <Moment format='LL'>currentMonthLastDate</Moment></p>
+      <Moment className="chart__bottom chart__bottom--left" date={currentMonthLastDate} format='LL' />&nbsp;<strong>-</strong>&nbsp;
+      <Moment className="chart__bottom" date={date} format='LL' />
       </div>
     </div>
   )

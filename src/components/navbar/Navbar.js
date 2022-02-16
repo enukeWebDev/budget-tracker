@@ -20,7 +20,7 @@ function Navbar() {
             <NavLink to="/allowances"> <PointOfSaleIcon fontSize='large' sx={{ color: grey[50] }}/> </NavLink>
           </div>
           <div className='expenses'>
-            <NavLink to="/expenses"> <HistoryIcon fontSize='large'sx={{ color: grey[50] }}/> </NavLink>
+            <NavLink to="/transactions"> <HistoryIcon fontSize='large'sx={{ color: grey[50] }}/> </NavLink>
           </div>
       </section>
 
