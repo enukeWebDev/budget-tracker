@@ -7,7 +7,7 @@ const initialState = {
   transactions: [{
     id:1,
     amount:100,
-    text:'Budget'
+    text:'Food'
   }]
 
   // Sample data for testing 

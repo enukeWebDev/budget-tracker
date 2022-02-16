@@ -10,6 +10,12 @@ function PieChart(props){
 
   let date  = new Date();
   let currentMonthLastDate  = (new Date(date.getFullYear(), date.getMonth()+1, 0));
+  const types =[];
+  transactions.forEach(element => {
+     if(!types.includes(element.text)){
+      types.push(element.text);
+     }
+  });
   
   const series = newTransactions.map((item) => item.amount);
   const labels = newTransactions.map((item) => item.text);
