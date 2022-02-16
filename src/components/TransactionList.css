@@ -6,6 +6,22 @@
 
 .list {
   height: 50px;
-  max-height: 300px;
+  max-height: 100%;
   overflow: scroll;
+}
+
+.list li.plus {
+  border-right: 5px solid #2ecc71;
+  display: flex;
+  align-items: center;
+  border-radius: 5px;
+  background-color: #B3CDD1;
+}
+
+.list li.minus {
+  border-right: 5px solid #c0392b;
+}
+
+.list li:hover .delete-btn {
+  opacity: 1;
 }

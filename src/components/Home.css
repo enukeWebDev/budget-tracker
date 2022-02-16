@@ -26,13 +26,12 @@ body {
   align-items: center;
   justify-content: center;
   height: 100vh;
-  width: 70%;
+  width: 100%;
 
   font-family: 'Lato', sans-serif;
 
   flex-direction: column;
-  padding-left: 10%;
-  padding-right: 4%;
+  padding-right: 50%;
   padding-top: 4%;
 
 }
@@ -41,8 +40,9 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 80%;
   background-color: #EBEBEB;
-  padding: 20px;
+  padding: 23px;
   border-radius: 15px 15px 0px 0px;
 }
 
@@ -85,18 +85,6 @@ h4 {
   position: relative;
   padding: 10px;
   margin: 10px 0;
-}
-
-.list li.plus {
-  border-right: 5px solid #2ecc71;
-}
-
-.list li.minus {
-  border-right: 5px solid #c0392b;
-}
-
-.list li:hover .delete-btn {
-  opacity: 1;
 }
 
 @media (max-width: 320px) {

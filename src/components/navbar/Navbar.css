@@ -1,19 +1,30 @@
-.main-layout {
-  display: flex;
-  background-color: #4E6E5D;
 
-  position: fixed;
-  flex-direction: row;
-  width: 20%;
-  text-align: center;
-}
 
 .navbar {
   align-self: center;
   flex: 1;
+  flex-direction: row;
+  height: 100vh;
 
-  padding-left: 4%;
+
+  padding-left: 50%;
   padding-right: 4%;
   padding-top: 20vh;
+
+}
+
+.home {
+  margin-bottom: 50px;
+  padding-right: 40px;
+}
+
+.allowances {
+  margin-bottom: 50px;
+  padding-right: 40px;
+}
+
+.expenses {
+  margin-bottom: 50px;
+  padding-right: 40px;
 }
 

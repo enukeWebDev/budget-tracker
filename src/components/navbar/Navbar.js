@@ -1,6 +1,11 @@
 import './Navbar.css';
 import React from 'react'
-import NavLink from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
+
+import HomeIcon from '@mui/icons-material/Home';
+import PointOfSaleIcon from '@mui/icons-material/PointOfSale';
+import HistoryIcon from '@mui/icons-material/History';
+import { grey } from '@mui/material/colors'
 
 
 function Navbar() {
@@ -8,12 +13,16 @@ function Navbar() {
     <main className="main-layout">
 
       <section className="navbar">
-        <h1> nav </h1>
-        <NavLink to="/home"> Home </NavLink> 
-        <h2 to="/allowances"> Allowances </h2>
-        <h2 to="/expenses"> Expense History </h2>
+          <div className='home'>
+            <NavLink to="/home"> <HomeIcon fontSize="large" sx={{ color: grey[50] }}/> </NavLink> 
+          </div>
+          <div className='allowances'>
+            <NavLink to="/allowances"> <PointOfSaleIcon fontSize='large' sx={{ color: grey[50] }}/> </NavLink>
+          </div>
+          <div className='expenses'>
+            <NavLink to="/expenses"> <HistoryIcon fontSize='large'sx={{ color: grey[50] }}/> </NavLink>
+          </div>
       </section>
-
 
   </main>
   );
