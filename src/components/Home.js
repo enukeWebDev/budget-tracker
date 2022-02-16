@@ -10,31 +10,6 @@ import './PieChart.scss'
 import { GlobalProvider } from '../context/GlobalState';
 import PieChart from './PieChart';
 import './Home.css';
-const transactions = [
-    {
-      id: 1,
-      text: "Budget",
-      amount: 100
-    },
-
-    {
-      id: 2,
-      text: "Phone",
-      amount: 20
-    },
-
-    {
-      id: 3,
-      text: "Food",
-      amount: 10
-    },
-
-    {
-      id: 4,
-      text: "Gas",
-      amount: 20
-    },
-  ];
 
 function App() {
    
@@ -45,19 +20,23 @@ function App() {
         <Navbar />
         <div className="centre-content">
           <Welcome />
+        
           <div className="shape">
-            <Header />
+          {/* <Header /> */}
+            <div className="left--content"> 
             <Balance />
-            <BudgetExpense />
             <TransactionList />
             <AddTransaction />
           </div>
-        </div>
+        
         <div className="right-content">
+      
+        <BudgetExpense />
           <PieChart />
         </div>
       </div>
-
+      </div>
+      </div>
     </GlobalProvider>
   );
 }

@@ -9,7 +9,7 @@ function PieChart(props){
   const newTransactions = [...transactions];
 
   let date  = new Date();
-  let currentMonthLastDate  = (new Date(date.getFullYear(), date.getMonth()+1, 0));
+  let currentMonthLastDate  = (new Date(date.getFullYear(), date.getMonth(), 1));
   const types =[];
   transactions.forEach(element => {
      if(!types.includes(element.text)){
@@ -29,7 +29,7 @@ function PieChart(props){
   return (
     <div className="Home__page__chart">
       <div className="pie__chart__background--color">
-        <p className="chart__title color--red">Total Expenses ${expense}</p>
+        {/* <p className="chart__title color--red">Total Expenses ${expense}</p> */}
       <Chart
        className="chart"
         type="pie"

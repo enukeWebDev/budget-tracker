@@ -5,12 +5,11 @@
   flex: 1;
   flex-direction: row;
   height: 100vh;
-
-
   padding-left: 50%;
   padding-right: 4%;
   padding-top: 20vh;
-
+  padding-right: 12%;
+ 
 }
 
 .home {

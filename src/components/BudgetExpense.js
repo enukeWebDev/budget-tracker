@@ -26,12 +26,12 @@ export const BudgetExpense = () => {
 
       <div className="budget">
         <h4>Budget</h4>
-        <p className="money-plus">{budget}</p>
+        <p className="money-plus">${budget}</p>
       </div>
 
       <div className="expense">
         <h4>Expense</h4>
-        <p className="money-minus">{expense}</p>
+        <p className="money-minus">${expense}</p>
       </div>
 
     </div>

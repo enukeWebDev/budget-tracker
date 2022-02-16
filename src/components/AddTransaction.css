@@ -1,7 +1,7 @@
 .new-transaction {
     border-bottom: 1px solid #bbb;
     padding-bottom: 10px;
-    margin: 10px 0 10px;
+    margin-top: 20px;
 }
 
 .input-area-text-or-number {
@@ -62,4 +62,19 @@ select {
 .btn:focus,
 .delete-btn:focus {
   outline: 0;
+}
+
+.form__label{
+  font-size: 20px;
+}
+.form__input {
+  height: 30px;
+  border: #27372F 2px solid;
+  margin-bottom: 10px;
+  width:100%;
+}
+
+.add-head{
+  align-content: center;
+  margin-top: 40px;
 }
