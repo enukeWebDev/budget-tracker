@@ -76,8 +76,6 @@ import './AddTransaction.css'
 
 export const AddTransaction = () => {
 
-  const [text, setText] = useState("");
-
   const[type, setType] = useState("expense");
   const [category,setCategory] = useState("");
   const [amount, setAmount] = useState(0);
@@ -87,56 +85,49 @@ export const AddTransaction = () => {
 
   const onSubmit = e => {
     
-      e.preventDefault();
-      if(type === "expense"){
-        if(category=== ""){
-          setError("Please select category")
-          return
-        }
-        if(amount === 0){
-          setError("Please Enter Amount");
-          return
-        }
+    e.preventDefault();
+    if(type === "expense"){
+      if(category=== ""){
+        setError("Please select category")
+        return
       }
-      if(type === "expense"){
+    }
+    if(amount === 0){
+      setError("Please Enter Amount");
+      return
+    }
+    if(type === "expense"){
       const newTransaction = {
       id: transactions.length +1,
       category,
       amount: parseFloat(amount)
+      }
+       
+      addTransaction(newTransaction);
+      setAmount(0);
+      setError("");
     }
-    
-    addTransaction(newTransaction);
-    return;
-   }
-  if(type === "budget"){
-    const newBudget = {
-      id:1,
-      amount: budgets[0].amount + parseFloat(amount)
+
+    if(type === "budget"){
+      const newBudget = {
+        id:1,
+        amount: budgets[0].amount + parseFloat(amount)
+      }
+      addBudget(newBudget);
+      setAmount(0);
+      setError("");
     }
-    console.log(newBudget);
-    addBudget(newBudget);
-  }
-   
   }
   
   const handleType= (e)=>{ 
     const value= e.target.value;
-    console.log("type",value);
     setType(value);
-    if(value === "budget"){
-      console.log("here");
-      setDisable(true);
-    }
-    if(value === "expense"){
-      console.log("here");
-      setDisable(false);
-    }
+    setDisable(value === "budget"? true:false);
   }
+
   const handleCategory = (e)=>{ 
     const value= e.target.value;
-    console.log("Category",value);
-    setCategory(value);
-   
+    setCategory(value); 
   }
 
   return (
@@ -144,13 +135,6 @@ export const AddTransaction = () => {
       <h3 className="add-head">Add New Transaction</h3>
       <form onSubmit={onSubmit}>
 
-        {/* <div className="form-control">
-          <label htmlFor="text">Choose One...</label>
-          <input type="text" value={text} 
-          onChange={(e) => setText(e.target.value)} placeholder="Enter type of expenses..." /> */}
-
-
-        {/* This can be map instead later on to clean this up a bit */}
         <div className="form-control" onChange={handleType}>
           <select >
             <option value="expense">Expense</option>  
@@ -161,7 +145,6 @@ export const AddTransaction = () => {
         <div className="form-control" >
           <select onChange={handleCategory} name="category" disabled={disable}>
             <option value="types">Please choose category...</option>
-            <option value="set-budget">Set you monthly budget</option>
             <option value="bills">Bills</option>
             <option value="food">Food</option>
             <option value="gas">Gas</option>
@@ -174,9 +157,10 @@ export const AddTransaction = () => {
 
 
         <div className="form-controls">
-          <p className="form__label"><label htmlFor="amount">Please Enter Amount<br />
-           </label>
-            </p>
+          <p className="form__label">
+            <label htmlFor="amount">Please Enter Amount<br />
+            </label>
+          </p>
           <input type='number' step="0.1" className="form__input" value={amount} onChange={(e) => setAmount(e.target.value)} placeholder="Enter amount..." />
           {error && <p className="form__label color--red">{error}</p>}
           <br />

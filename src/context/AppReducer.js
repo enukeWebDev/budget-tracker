@@ -14,7 +14,6 @@ export default (state, action) => {
       }
 
     case 'ADD_BUDGET':
-      // console.log(action.payload);
       return {
         ...state,
         budgets:[ action.payload]

@@ -68,7 +68,8 @@ select {
   font-size: 20px;
 }
 .form__input {
-  height: 30px;
+  font-size: 20px;
+  padding: 5px;
   border: #27372F 2px solid;
   margin-bottom: 10px;
   width:100%;

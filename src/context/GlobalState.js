@@ -5,46 +5,19 @@ import AppReducer from './AppReducer';
 const initialState = {
 
   transactions: [
-  //   {
-  //   id:1,
-  //   amount:100,
-  //   text:'Budget'
-  // }
+    
+    // {}    id: 1,
+    //     category:"food";  //test data;
+    //     amount: 100
+    //   }, 
 ],
   
-budgets: [
+budgets: [  // intially budget set to zero
    {
     id: 1,
     amount:0
   }
 ]
-
-  // Sample data for testing 
-  // transactions: [
-  //   {
-  //     id: 1,
-  //     text: "Budget",
-  //     amount: 100
-  //   },
-
-  //   {
-  //     id: 2,
-  //     text: "Phone",
-  //     amount: -20
-  //   },
-
-  //   {
-  //     id: 3,
-  //     text: "Food",
-  //     amount: -10
-  //   },
-
-  //   {
-  //     id: 4,
-  //     text: "Gas",
-  //     amount: -20
-  //   }
-  // ]
 }
 
 //Create context
