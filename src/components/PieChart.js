@@ -4,16 +4,28 @@ import { GlobalContext } from '../context/GlobalState';
 import Moment from 'react-moment';
 
 function PieChart(props){
-  const date  = new Date().toLocaleString() ;
+ // const date  = new Date().toLocaleString() ;
   const { transactions } = useContext(GlobalContext);
-  const series = transactions.map((item) => item.amount);
-  const labels = transactions.map((item) => item.text);
+  const newTransactions = [...transactions];
+  let date  = new Date();
+  let currentMonthStartDate  = (new Date(date.getFullYear(), date.getMonth(), 1)).toLocaleDateString();
+  let currentMonthLastDate  = (new Date(date.getFullYear(), date.getMonth()+1, 0)).toLocaleDateString();
+     
+  const series = newTransactions.map((item) => item.amount);
+  const labels = newTransactions.map((item) => item.text);
   
+  const expense = (
+    series
+      .filter(item => item < 0)
+      .reduce((acc, item) => (acc += item), 0) * -1)
+    .toFixed(2);
   
   return (
     <div className="Home__page__chart">
-      <Moment format='L'>'02-12-2022'</Moment>
+      <div className="pie__chart__background--color">
+        <p className="chart__title color--red">Total Expenses ${expense}</p>
       <Chart
+       className="chart"
         type="pie"
         width={400}
         height={400}
@@ -40,6 +52,9 @@ function PieChart(props){
         
         }} 
       />
+      <p className="chart__title">
+      <Moment format='LL'>currentMonthLastDate</Moment></p>
+      </div>
     </div>
   )
 }
