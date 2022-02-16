@@ -77,21 +77,35 @@ import './AddTransaction.css'
 export const AddTransaction = () => {
 
   const [text, setText] = useState("");
-
+  // const [text, setText] = useState({
+  //   budget: "budget",
+  //   expense:"expense"
+  // });
+  const [category,setCategory] = useState("expense");
   const [amount, setAmount] = useState(0);
 
   const { addTransaction } = useContext(GlobalContext);
 
   const onSubmit = e => {
+    console.log("category",category);
     e.preventDefault();
-
+    console.log("text here",text);
     const newTransaction = {
       id: Math.floor(Math.random() * 1000),
       text,
       amount: +amount
     }
-
+    
     addTransaction(newTransaction);
+  }
+
+  const handleCategory = (e)=>{
+   
+    const name = e.target.name;
+    const value= e.target.value;
+    console.log("name",name);
+    console.log("value",value);
+    setCategory(value);
   }
 
   return (
@@ -108,8 +122,11 @@ export const AddTransaction = () => {
         {/* This can be map instead later on to clean this up a bit */}
         <div className="form-control">
           <select>
-            <option value="budget">Budget</option>
-            <option value="expense">Expense</option>
+          {/* <select onChange={handleCategory} name="category"> */}
+            {/* <option value="budget">Budget</option>
+            <option value="expense">Expense</option> */}
+            {/* <option value={text.budget}>Budget</option>
+            <option value={text.expense}>Expense</option> */}
           </select>
         </div>
 

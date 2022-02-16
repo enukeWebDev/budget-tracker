@@ -29,7 +29,7 @@ function PieChart(props){
   return (
     <div className="Home__page__chart">
       <div className="pie__chart__background--color">
-        {/* <p className="chart__title color--red">Total Expenses ${expense}</p> */}
+        <p className="chart__title color--red">Total Expenses ${expense}</p>
       <Chart
        className="chart"
         type="pie"
