@@ -5,10 +5,17 @@ import AppReducer from './AppReducer';
 const initialState = {
 
   transactions: [
-    {
-    id:1,
-    amount:100,
-    text:'Budget'
+  //   {
+  //   id:1,
+  //   amount:100,
+  //   text:'Budget'
+  // }
+],
+  
+budgets: [
+   {
+    id: 1,
+    amount:0
   }
 ]
 
@@ -64,12 +71,27 @@ export const GlobalProvider = ({ children }) => {
     });
   }
 
+  // function deleteBudget(id) {
+  //   dispatch({
+  //     type: 'DELETE_BUDGET',
+  //     payload: id
+  //   });
+  // }
+
+  function addBudget(budget) {
+    dispatch({
+      type: 'ADD_BUDGET',
+      payload: budget
+    });
+  }
 
   return (
     <GlobalContext.Provider value={{
+      budgets : state.budgets,
       transactions: state.transactions,
       deleteTransaction,
-      addTransaction
+      addTransaction,
+      addBudget
     }}>
       {children}
     </GlobalContext.Provider>

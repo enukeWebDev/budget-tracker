@@ -4,13 +4,17 @@ import './Balance.css'
 
 export const Balance = () => {
 
-  const { transactions } = useContext(GlobalContext);
+  const { transactions ,budgets } = useContext(GlobalContext);
 
   const amounts = transactions.map(transaction => transaction.amount);
-  // console.log(amounts);
+  
+  const expense = 
+    amounts
+      .reduce((acc, item) => (acc += item), 0) ;
 
-  const total = amounts.reduce((acc, item) => (acc += item), 0).toFixed(2);
-
+   let total = (budgets[0].amount - expense).toFixed(2);
+   
+   
   return (
     <div className="counter-container">
       <img src='https://icon-library.com/images/expenses-icon/expenses-icon-20.jpg' width={100} height={100} className="icon"/ >
