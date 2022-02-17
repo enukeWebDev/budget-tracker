@@ -1,3 +1,7 @@
 body {
   background-color: #4E6E5D;
 }
+
+.layout {
+  display: flex;
+}

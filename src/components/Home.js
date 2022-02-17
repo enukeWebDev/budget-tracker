@@ -17,12 +17,12 @@ function App() {
     <GlobalProvider>
 
       <div className="whole-app">
-        <Navbar />
+
         <div className="centre-content">
           <Welcome />
         
           <div className="shape">
-          {/* <Header /> */}
+
             <div className="left--content"> 
             <Balance />
             <TransactionList />

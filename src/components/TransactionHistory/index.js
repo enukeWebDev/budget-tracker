@@ -4,7 +4,6 @@ import Header from './Header';
 import Content from './Content';
 import {useState, useEffect} from "react";
 import {Grid} from "@material-ui/core";
-import Navbar from '../navbar/Navbar';
 
 const content =[{
   id : 1,
@@ -42,14 +41,17 @@ function Transaction() {
   },[])
 
   return (
+    <div className='history'> 
     <main className="transaction--layout" > 
-       
        <Header category="Food" expense="100" content={content}/>
        {contentDisplay}
-       
-       
+
+       <ul className="list">
+        {transactions.map(transaction => (<Transaction key={transaction.id} transaction={transaction} />))}
+      </ul>
       
     </main>
+    </div>
   );
 }
 
