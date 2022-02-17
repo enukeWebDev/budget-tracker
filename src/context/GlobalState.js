@@ -1,16 +1,12 @@
 import React, { createContext, useReducer } from 'react'
+import axios from 'axios';
 import AppReducer from './AppReducer';
 
-//Initial State - negative number is expense - positive is the budget
+
+   
 const initialState = {
 
-  transactions: [
-    
-    // {}    id: 1,
-    //     category:"food";  //test data;
-    //     amount: 100
-    //   }, 
-],
+  transactions: [],
 users:[],
 budgets: [  // intially budget set to zero
    {
@@ -20,8 +16,6 @@ budgets: [  // intially budget set to zero
 ],
 
 }
-
-
 
 //Create context
 export const GlobalContext = createContext(initialState);
@@ -68,6 +62,13 @@ export const GlobalProvider = ({ children }) => {
     });
   }
 
+  function loadTransactions(transactions) {
+    dispatch({
+      type: 'LOAD_TRANSACTIONS',
+      payload: transactions
+    });
+  }
+
   return (
     <GlobalContext.Provider value={{
       budgets : state.budgets,
@@ -76,7 +77,8 @@ export const GlobalProvider = ({ children }) => {
       deleteTransaction,
       addTransaction,
       addBudget,
-      addUser
+      addUser,
+      loadTransactions
     }}>
       {children}
     </GlobalContext.Provider>

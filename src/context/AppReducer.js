@@ -1,4 +1,6 @@
+
 export default (state, action) => {
+    
   switch (action.type) {
     case 'DELETE_TRANSACTION':
       return {
@@ -7,12 +9,16 @@ export default (state, action) => {
       }
 
     case 'ADD_TRANSACTION':
-      console.log(action.payload);
-      console.log("add_transaction",action.payload);
       return {
         ...state,
         transactions: [action.payload, ...state.transactions]
       }
+
+      case 'LOAD_TRANSACTIONS':
+        return {
+          ...state,
+          transactions: action.payload
+        }
 
     case 'ADD_BUDGET':
       return {
@@ -29,5 +35,6 @@ export default (state, action) => {
 
     default:
       return state;
+     
   }
 }

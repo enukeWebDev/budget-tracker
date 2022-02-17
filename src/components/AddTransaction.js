@@ -11,40 +11,18 @@ export const AddTransaction = () => {
   const [error,setError] = useState("");
   const [disable,setDisable] = useState(false);
   const [catOptions,setCatOptions]= useState([]);
+  const [warning, setWarning] = useState("");
   const { addTransaction,transactions,budgets,addBudget} = useContext(GlobalContext);
 
    const user_id = 1;
    useEffect(()=>{
     axios.get(`/api/categories/${user_id}`)
     .then((res)=>{
-      console.log(res.data);
         setCatOptions(res.data);   
     })
     .catch((err) => { console.log(err)});
    },[]);
 
-    useEffect(() => {
-     
-      axios.get(`/api/transactions/${user_id}`)
-      .then((res) => {
-        let data = res.data;
-        console.log(res.data);
-      // amount was in string refactor to change it into float
-       let newData = data.map((item)=> ({
-         id:item.id,
-         category:item.category,
-         amount:parseFloat(item.amount),
-         date:item.date
-       }))
-      newData.forEach(element => {
-        addTransaction(element);
-       });
-        
-      })
-      .catch((err)=>{ console.log(err)});
-    },[])
-
-   
     const onSubmit = e => {
     e.preventDefault();
     if(type === "expense"){
@@ -57,6 +35,7 @@ export const AddTransaction = () => {
       setError("Please Enter Amount");
       return
     }
+    // check error for expenses
     if(type === "expense"){
       const newTransaction = {
       category,
@@ -74,7 +53,9 @@ export const AddTransaction = () => {
       setError("");
     }
 
+  // checks errors for total budgets
     if(type === "budget"){
+      
       const newBudget = {
         id:1,
         amount: budgets[0].amount + parseFloat(amount)
@@ -109,7 +90,7 @@ export const AddTransaction = () => {
         <div className="form-control" onChange={handleType}>
           <select >
             <option value="expense">Expense</option>  
-            <option value="budget">Budget</option>
+            <option value="budget">Total Budget</option>
           </select>
         </div>
 

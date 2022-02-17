@@ -6,7 +6,7 @@ import Moment from 'react-moment';
 function PieChart(){
  // const date  = new Date().toLocaleString() ;
   const { transactions , budgets} = useContext(GlobalContext);
-
+  console.log("transactions",transactions);
   let date  = new Date();
   let currentMonthLastDate  = (new Date(date.getFullYear(), date.getMonth(), 1));
   
