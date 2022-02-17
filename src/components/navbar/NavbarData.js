@@ -1,7 +1,9 @@
 import React from 'react';
-import * as FaIcons from "react-icons/fa";
 import * as AiIcons from "react-icons/ai";
-import * as IoIcons from "react-icons/io";
+
+import { FaHistory } from "react-icons/fa";
+import { AiOutlineLogout } from "react-icons/ai";
+import { GiReceiveMoney } from 'react-icons/gi'
 
 export const NavbarData = [
   {
@@ -14,21 +16,21 @@ export const NavbarData = [
   {
     title: "Adjust Budgets",
     path: "/allowances",
-    icon: <FaIcons.FaCartPlus />,
+    icon: <GiReceiveMoney />,
     cName: "nav-text"
   },
 
   {
     title: "Transaction History",
     path: "/transactions",
-    icon: <FaIcons.FaEnvelopeOpen />,
+    icon: <FaHistory/>,
     cName: "nav-text"
   },
 
   {
-    title: "Login",
+    title: "Logout",
     path: "/",
-    icon: <IoIcons.IoIosPaper />,
+    icon: <AiOutlineLogout />,
     cName: "nav-text"
   },
 
