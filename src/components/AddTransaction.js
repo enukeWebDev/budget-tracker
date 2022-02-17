@@ -1,4 +1,5 @@
-import React, { useState, useContext } from 'react';
+import axios from 'axios';
+import React, { useState, useContext, useEffect } from 'react';
 import { GlobalContext } from '../context/GlobalState';
 import './AddTransaction.css'
 
@@ -9,10 +10,42 @@ export const AddTransaction = () => {
   const [amount, setAmount] = useState(0);
   const [error,setError] = useState("");
   const [disable,setDisable] = useState(false);
+  const [catOptions,setCatOptions]= useState([]);
   const { addTransaction,transactions,budgets,addBudget} = useContext(GlobalContext);
-  
-  const onSubmit = e => {
-    
+
+   const user_id = 1;
+   useEffect(()=>{
+    axios.get(`/api/categories/${user_id}`)
+    .then((res)=>{
+      console.log(res.data);
+        setCatOptions(res.data);   
+    })
+    .catch((err) => { console.log(err)});
+   },[]);
+
+    useEffect(() => {
+     
+      axios.get(`/api/transactions/${user_id}`)
+      .then((res) => {
+        let data = res.data;
+        console.log(res.data);
+      // amount was in string refactor to change it into float
+       let newData = data.map((item)=> ({
+         id:item.id,
+         category:item.category,
+         amount:parseFloat(item.amount),
+         date:item.date
+       }))
+      newData.forEach(element => {
+        addTransaction(element);
+       });
+        
+      })
+      .catch((err)=>{ console.log(err)});
+    },[])
+
+   
+    const onSubmit = e => {
     e.preventDefault();
     if(type === "expense"){
       if(category=== ""){
@@ -26,12 +59,17 @@ export const AddTransaction = () => {
     }
     if(type === "expense"){
       const newTransaction = {
-      id: transactions.length +1,
       category,
-      amount: parseFloat(amount)
+      amount: parseFloat(amount),
+      date: new Date()
       }
-       
       addTransaction(newTransaction);
+
+      axios.post(`/api/transactions/1`,newTransaction)
+      .then ((res) => {
+       console.log("OK");
+      })
+      .catch((err) => console.log(err)); 
       setAmount(0);
       setError("");
     }
@@ -58,6 +96,11 @@ export const AddTransaction = () => {
     setCategory(value); 
   }
 
+  const selectCatOptions = catOptions.map((item)=>
+     <option key={item.id}value={item.name}>{item.name}</option>
+  )
+  
+
   return (
     <>
       <h3 className="add-head">Add New Transaction</h3>
@@ -73,12 +116,7 @@ export const AddTransaction = () => {
         <div className="form-control" >
           <select onChange={handleCategory} name="category" disabled={disable}>
             <option value="types">Please choose category...</option>
-            <option value="bills">Bills</option>
-            <option value="food">Food</option>
-            <option value="gas">Gas</option>
-            <option value="entertainment">Entertainment</option>
-            <option value="fitness">Fitness</option>
-            <option value="others">Others</option>
+            {selectCatOptions}
           </select>
         </div>
 

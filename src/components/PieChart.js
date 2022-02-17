@@ -26,6 +26,9 @@ function PieChart(){
   const expense = amounts.reduce((acc, item) => (acc += item), 0) 
    let total = (budgets[0].amount - expense).toFixed(2);
    
+   if(budgets[0].amount === 0){
+     total=0;
+   }
   
   const series = Object.values(dataObj)
   const labels = Object.keys(dataObj);

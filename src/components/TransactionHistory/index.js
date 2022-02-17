@@ -28,17 +28,17 @@ function Transaction() {
    return <Content key={item.id} date={item.date} amount={item.amount} />
   })
 
-  useEffect(()=>{
-    let date  = new Date();
-    let currentMonthStartDate  = (new Date(date.getFullYear(), date.getMonth(), 1)).toLocaleDateString();
-    let currentMonthLastDate  = (new Date(date.getFullYear(), date.getMonth()+1, 0)).toLocaleDateString();
-    let userId = 1;
+  // useEffect(()=>{
+  //   let date  = new Date();
+  //   let currentMonthStartDate  = (new Date(date.getFullYear(), date.getMonth(), 1)).toLocaleDateString();
+  //   let currentMonthLastDate  = (new Date(date.getFullYear(), date.getMonth()+1, 0)).toLocaleDateString();
+  //   let userId = 1;
 
-    axios.get(`api/users/${userId}/transactions?start_date=${currentMonthStartDate}&end_date=${currentMonthLastDate}`)
-    .then((res) => {
-       setTransactions(res.data);
-    })
-  },[])
+  //   axios.get(`api/users/${userId}/transactions?start_date=${currentMonthStartDate}&end_date=${currentMonthLastDate}`)
+  //   .then((res) => {
+  //      setTransactions(res.data);
+  //   })
+  // },[])
 
   return (
     <div className='history'> 

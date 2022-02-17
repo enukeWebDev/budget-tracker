@@ -7,6 +7,7 @@ export default (state, action) => {
       }
 
     case 'ADD_TRANSACTION':
+      console.log(action.payload);
       console.log("add_transaction",action.payload);
       return {
         ...state,
