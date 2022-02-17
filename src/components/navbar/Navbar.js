@@ -1,36 +1,48 @@
+import React, { useState } from 'react';
+import * as FaIcons from "react-icons/fa";
+import * as AiIcons from "react-icons/ai";
+import { Link } from 'react-router-dom';
+import { NavbarData } from './NavbarData';
 import './Navbar.css';
-import React from 'react'
-import { NavLink } from 'react-router-dom'
+import { IconContext } from 'react-icons';
 
-import HomeIcon from '@mui/icons-material/Home';
-import PointOfSaleIcon from '@mui/icons-material/PointOfSale';
-import HistoryIcon from '@mui/icons-material/History';
-import LogoutIcon from '@mui/icons-material/Logout';
-import { grey } from '@mui/material/colors'
+function Sidebar() {
 
-
-function Navbar() {
+  const [sidebar, setSidebar] = useState(false);
+  const showSidebar = () => setSidebar(!sidebar);
 
   return (
-    <main>
+    <>
+      <IconContext.Provider value={{ color: '#fff' }}>
+        <div className="sidebar">
+          <Link to="#" className="menu-bars">
+            <FaIcons.FaBars onClick={showSidebar} />
+          </Link>
+        </div>
 
-      <section className="navbar">
-          <div className='home'>
-            <NavLink to="/home"> <HomeIcon fontSize="large" sx={{ color: grey[50] }}/> </NavLink> 
-          </div>
-          <div className='allowances'>
-            <NavLink to="/allowances"> <PointOfSaleIcon fontSize='large' sx={{ color: grey[50] }}/> </NavLink>
-          </div>
-          <div className='expenses'>
-            <NavLink to="/transactions"> <HistoryIcon fontSize='large'sx={{ color: grey[50] }}/> </NavLink>
-          </div>
-          <div className='expenses'>
-            <NavLink to="/"> <LogoutIcon fontSize='large'sx={{ color: grey[50] }}/> </NavLink>
-          </div>
-      </section>
-
-  </main>
-  );
+        <nav className={sidebar ? "nav-menu active" : "nav-menu"}>
+          <ul className="nav-menu-items" onClick={showSidebar}>
+            <li className="navbar-toggle">
+              <Link to="#" className="menu-bars">
+                <AiIcons.AiOutlineClose />
+              </Link>
+            </li>
+            {/* Mapping the sidebar data */}
+            {NavbarData.map((item, index) => {
+              return (
+                <li key={index} className={item.cName}>
+                  <Link to={item.path}>
+                    {item.icon}
+                    <span>{item.title}</span>
+                  </Link>
+                </li>
+              )
+            })};
+          </ul>
+        </nav>
+      </IconContext.Provider>
+    </>
+  )
 }
 
-export default Navbar;
+export default Sidebar;
