@@ -30,7 +30,7 @@ function App() {
           </div>
         
         <div className="right-content">
-      
+        
         <BudgetExpense />
           <PieChart />
         </div>

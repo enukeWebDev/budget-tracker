@@ -5,6 +5,7 @@ import { NavLink } from 'react-router-dom'
 import HomeIcon from '@mui/icons-material/Home';
 import PointOfSaleIcon from '@mui/icons-material/PointOfSale';
 import HistoryIcon from '@mui/icons-material/History';
+import LogoutIcon from '@mui/icons-material/Logout';
 import { grey } from '@mui/material/colors'
 
 
@@ -21,6 +22,9 @@ function Navbar() {
           </div>
           <div className='expenses'>
             <NavLink to="/transactions"> <HistoryIcon fontSize='large'sx={{ color: grey[50] }}/> </NavLink>
+          </div>
+          <div className='expenses'>
+            <NavLink to="/"> <LogoutIcon fontSize='large'sx={{ color: grey[50] }}/> </NavLink>
           </div>
       </section>
 
