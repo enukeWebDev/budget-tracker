@@ -10,7 +10,7 @@ import { grey } from '@mui/material/colors'
 
 function Navbar() {
   return (
-    <main className="main-layout">
+    <main>
 
       <section className="navbar">
           <div className='home'>
