@@ -1,19 +1,21 @@
 import "./login.scss";
-import { React, useState } from "react";
+import { React, useState,useContext } from "react";
 import axios from "axios";
 import {Grid,Paper,TextField,Button,Typography,Avatar,} from "@material-ui/core";
 import isEmail from 'validator/lib/isEmail';
 import { Link } from "react-router-dom";
 import { useNavigate } from 'react-router-dom';
+import { GlobalContext } from '../context/GlobalState';
 
-function Login(props) {
+function Login() {
+  const {addUser} = useContext(GlobalContext);
   const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
-
+  
   const submitForm = () => {
-
+     
     if (email === "" || password === "") {
       setError("Fields are required");
       return;
@@ -32,6 +34,7 @@ function Login(props) {
         if (res.status !== 404) {
           setEmail("");
           setPassword("");
+          addUser(data);
           window.localStorage.setItem("user", data);
           setError("");
           navigate('/home');

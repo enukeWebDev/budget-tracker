@@ -19,6 +19,11 @@ export default (state, action) => {
         budgets:[ action.payload]
 
       }
+    case 'ADD_USER':
+      return {
+        ...state,
+        users:[action.payload]
+      }
 
 
     default:

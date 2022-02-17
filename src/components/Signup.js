@@ -1,12 +1,14 @@
 import "./signup.scss";
 import axios from 'axios';
-import { React, useState } from "react";
+import { React, useState,useContext } from "react";
 import {Grid, Paper,TextField,Button,Typography,Avatar,} from "@material-ui/core";
 import isEmail from 'validator/lib/isEmail';
 import { Link,useNavigate } from "react-router-dom";
+import { GlobalContext } from '../context/GlobalState';
 
 function Signup() {
   const navigate = useNavigate();
+  const {addUser} = useContext(GlobalContext);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
@@ -35,7 +37,7 @@ function Signup() {
           setPassword("");
           setFirstName("");
           setLastName("");
-          console.log(data);
+          addUser(data);
           window.localStorage.setItem("user", data);
           setError("");
           navigate('/home');

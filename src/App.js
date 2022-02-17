@@ -3,11 +3,12 @@ import Signup from "./components/Signup";
 import Home from "./components/Home";
 import Transaction from "./components/TransactionHistory";
 import { Routes, Route} from "react-router-dom";
-
+import { GlobalProvider } from './context/GlobalState';
 import './App.css';
 
 function App() {
   return (
+   <GlobalProvider>
     <main className="layout">
       <Routes>
         <Route path="/" element={<Login />} />
@@ -16,7 +17,7 @@ function App() {
         <Route path="/transactions" element={<Transaction />} />
       </Routes>
   </main>
-
+  </GlobalProvider>
   );
 }
 

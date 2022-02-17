@@ -11,14 +11,17 @@ const initialState = {
     //     amount: 100
     //   }, 
 ],
-  
+users:[],
 budgets: [  // intially budget set to zero
    {
     id: 1,
     amount:0
   }
-]
+],
+
 }
+
+
 
 //Create context
 export const GlobalContext = createContext(initialState);
@@ -58,13 +61,22 @@ export const GlobalProvider = ({ children }) => {
     });
   }
 
+  function addUser(user) {
+    dispatch({
+      type: 'ADD_USER',
+      payload: user
+    });
+  }
+
   return (
     <GlobalContext.Provider value={{
       budgets : state.budgets,
       transactions: state.transactions,
+      users: state.users,
       deleteTransaction,
       addTransaction,
-      addBudget
+      addBudget,
+      addUser
     }}>
       {children}
     </GlobalContext.Provider>

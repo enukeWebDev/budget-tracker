@@ -3,7 +3,7 @@ import Chart from 'react-apexcharts';
 import { GlobalContext } from '../context/GlobalState';
 import Moment from 'react-moment';
 
-function PieChart(props){
+function PieChart(){
  // const date  = new Date().toLocaleString() ;
   const { transactions , budgets} = useContext(GlobalContext);
 
@@ -35,7 +35,7 @@ function PieChart(props){
   return (
     <div className="Home__page__chart">
       <div className="pie__chart__background--color">
-        <p className="chart__title "><span class="color--blue">Balance </span> vs <span class="color--red"> Expenses</span> </p>
+        <p className="chart__title "><span className="color--blue">Balance </span> vs <span className="color--red"> Expenses</span> </p>
       <Chart
        className="chart"
         type="pie"
