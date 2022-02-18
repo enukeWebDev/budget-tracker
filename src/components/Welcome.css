@@ -1,4 +1,7 @@
 .welcome {
   padding-top: -10%;
-  align-content: center;
+  display: flex;
+  flex-direction: row;
+  align-self: center;
+  text-align: center;
 }

@@ -37,9 +37,9 @@ function Sidebar() {
                   </Link>
                 </li>
               )
-            })};
+            })}
           </ul>
-          
+
         </nav>
       </IconContext.Provider>
     </>
