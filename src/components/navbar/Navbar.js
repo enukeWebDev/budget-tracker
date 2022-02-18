@@ -22,14 +22,6 @@ function Sidebar() {
     }
   }, [window.location.pathname])
 
-  useEffect(() => {
-    const location = window.location.pathname
-    if (location === '/home') {
-      setColour('#EF9D60')
-    } 
-  }, [window.location.pathname])
-
-
   return (
     <>
       <IconContext.Provider value={{ color: '#fff' }}>
@@ -50,7 +42,7 @@ function Sidebar() {
             {NavbarData.map((item, index) => {
               return (
                 <li key={index} className={item.cName}>
-                  <Link to={item.path}>
+                  <Link className={item.path === window.location.pathname ? 'active' : null} to={item.path}>
                     {item.icon}
                     <span>{item.title}</span>
                   </Link>

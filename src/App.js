@@ -9,7 +9,6 @@ import Navbar from './components/navbar/Navbar'
 import './App.css';
 
 function App() {
-
   return (
    <GlobalProvider>
     <main className="layout">

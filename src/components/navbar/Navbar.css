@@ -56,6 +56,10 @@
   background-color: #EF9D60;
 }
 
+.nav-text .active {
+  background-color: #EF9D60;
+}
+
 .nav-menu-items {
   width: 100%;
 }
