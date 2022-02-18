@@ -1,18 +1,17 @@
 import Moment from 'react-moment';
 
-function Content({transaction}) {
-  console.log(transaction)
+function Content(props) {
   return (
-    <div className="transaction__content" onClick={transaction.form}>  
+    <div className="transaction__content" onClick={props.form}>  
      <p>
        <span className="date--circle">
-         <Moment format='D'>{transaction.date}</Moment>
+         <Moment format='D'>{props.date}</Moment>
          </span>
        <span className="date--top">
-         <Moment format='dddd, MMMM yyyy'>{transaction.date}</Moment>
+         <Moment format='dddd, MMMM yyyy'>{props.date}</Moment>
        </span>
       </p>
-     <p className="color--red">${transaction.amount} </p>
+     <p className="color--red">${props.amount} </p>
     </div>
   );
 }
