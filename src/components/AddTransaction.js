@@ -2,8 +2,8 @@ import axios from 'axios';
 import React, { useState, useContext, useEffect } from 'react';
 import { GlobalContext } from '../context/GlobalState';
 import './AddTransaction.css';
-import Box from '@mui/material/Box';
-import Slider from '@mui/material/Slider';
+// import Box from '@mui/material/Box';
+// import Slider from '@mui/material/Slider';
 
 export const AddTransaction = () => {
 
@@ -12,8 +12,8 @@ export const AddTransaction = () => {
   const [amount, setAmount] = useState(0);
   const [error,setError] = useState("");
   const [disable,setDisable] = useState(false);
-  const [catOptions,setCatOptions]= useState([]);
-  const [warning, setWarning] = useState("");
+  // const [catOptions,setCatOptions]= useState([]);
+  // const [warning, setWarning] = useState("");
   const { addTransaction,transactions,budgets,addBudget,categoryBudgets,addCategoryBudget} = useContext(GlobalContext);
 
   
@@ -111,7 +111,7 @@ export const AddTransaction = () => {
           <select >
             <option value="Expense">Expense</option>  
             <option value="Budget">Total Budget</option>
-           { budgets[0].amount >0 &&<option value="categoryBudget">Assign Budget to Categories </option>}
+           {/* { budgets[0].amount >0 &&<option value="categoryBudget">Assign Budget to Categories </option>} */}
           </select>
         </div>
 
@@ -126,9 +126,10 @@ export const AddTransaction = () => {
 
         <div className="form-controls">
           <p className="form__label">
-            {type === "Expense" && <label htmlFor="amount">Please Enter Amount<br /> </label>}
-            {type === "Budget" && <label htmlFor="amount">Please Enter Amount<br /> </label>}
-            {type === "categoryBudget" && <label htmlFor="amount">Please Select Amount <br /> </label>}
+          <label htmlFor="amount">Please Enter Amount<br /> </label>
+          </p>
+            {/* {type === "Budget" && <label htmlFor="amount">Please Enter Amount<br /> </label>} */}
+            {/* {type === "categoryBudget" && <label htmlFor="amount">Please Select Amount <br /> </label>}
           </p>
          
           {type === "categoryBudget" && <p className="slider--margin">
@@ -143,9 +144,10 @@ export const AddTransaction = () => {
             onChange={(e)=> setAmount(e.target.value)}
            
           /></p>}
-          {type === "categoryBudget" && <input type='number' step="0.1" className="form__input" value={amount} disabled={true} placeholder="Enter amount..." />}
-          {type === "Expense"  &&<input type='number' step="0.1" className="form__input" value={amount} onChange={(e) => setAmount(e.target.value)} placeholder="Enter amount..." />}
-          {type === "Budget"  &&<input type='number' step="0.1" className="form__input" value={amount} onChange={(e) => setAmount(e.target.value)} placeholder="Enter amount..." />}
+          {type === "categoryBudget" && <input type='number' step="0.1" className="form__input" value={amount} disabled={true} placeholder="Enter amount..." />} */}
+          {/* {type === "Expense"  &&<input type='number' step="0.1" className="form__input" value={amount} onChange={(e) => setAmount(e.target.value)} placeholder="Enter amount..." />}
+          {type === "Budget"  &&<input type='number' step="0.1" className="form__input" value={amount} onChange={(e) => setAmount(e.target.value)} placeholder="Enter amount..." />} */}
+          <input type='number' step="0.1" className="form__input" value={amount} onChange={(e) => setAmount(e.target.value)} placeholder="Enter amount..." />
           {error && <p className="form__label color--red">{error}</p>}
           <br />
         </div>
