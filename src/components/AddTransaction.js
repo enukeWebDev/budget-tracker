@@ -25,7 +25,7 @@ export const AddTransaction = () => {
 
     const onSubmit = e => {
     e.preventDefault();
-    if(type === "Expense"){
+    if(type === "Expense" || type === "categoryBudget"){
       if(category=== ""){
         setError("Please select category")
         return
@@ -97,7 +97,7 @@ export const AddTransaction = () => {
           <select >
             <option value="Expense">Expense</option>  
             <option value="Budget">Total Budget</option>
-            
+            <option value="categoryBudget">Assign Budget to Categories </option>
           </select>
         </div>
 
@@ -120,7 +120,9 @@ export const AddTransaction = () => {
           <br />
         </div>
 
-        <button className="btn" >Add {type}</button>
+        {type === "Expense" &&<button className="btn" >Add {type}</button>}
+        {type === "Budget" &&<button className="btn" >Add To Budget</button>}
+        {type === "categoryBudget" &&<button className="btn" >Assign Budget to {category || "..."}</button>}
 
       </form>
     </>
