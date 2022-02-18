@@ -20,10 +20,16 @@ export default (state, action) => {
           transactions: action.payload
         }
 
+        case 'LOAD_BUDGET':
+          return {
+            ...state,
+            budgets: action.payload
+          }
+
     case 'ADD_BUDGET':
       return {
         ...state,
-        budgets:[ action.payload]
+        budgets:[action.payload]
 
       }
     case 'ADD_USER':

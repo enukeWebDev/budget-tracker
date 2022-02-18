@@ -13,30 +13,48 @@ import { GlobalContext } from '../context/GlobalState';
 
 
 function Home() {
-  const { loadTransactions} = useContext(GlobalContext);
-  const [mode, setMode]= useState(false);
+  const { loadTransactions,loadBudget,addBudget} = useContext(GlobalContext);
 
-  useEffect(() => {
-     
-    axios.get(`/api/transactions/1`)
-    .then((res) => {
-      let data = res.data;
-    // amount was in string refactor to change it into float
-     let newData = data.map((item)=> ({
-       id:item.id,
-       category:item.category,
-       amount:parseFloat(item.amount),
-       date:item.date
-     }))
-      loadTransactions(newData)
-      setMode(true);  
+   useEffect(() =>{
+    let URL1 = `/api/transactions/1`;
+    let URL2 = `/api/budget/1`;
+    const promise1 = axios.get(URL1);
+    const promise2 = axios.get(URL2);
+    Promise.all([promise1, promise2])
+    .then((res) =>{
+      let transactions = res[0].data;
+      if(res[0].data.length>0){
+      let refatoredTransactions = transactions.map((item)=> ({
+        id:item.id,
+        category:item.category,
+        amount:parseFloat(item.amount),
+        date:item.date
+      }))
+       loadTransactions(refatoredTransactions);
+    }
+       if(res[1].data.length>0){
+        const data = res[1].data;
+        let newData = data.map((item)=> ({
+          id:item.id,
+          amount:parseFloat(item.amount),
+          date:item.date
+        }))
+          loadBudget(newData)
+          } 
+        else {
+          addBudget({
+            id: 1,
+            amount:0,
+            date: new Date()
+          })
+        } 
     })
-    .catch((err)=>{ console.log(err)});
-  },[])
+    .catch((err) => console.log(err));
+   },[])
     
   return (
       <div className="whole-app">
-        {mode &&
+        
         <div className="centre-content">
           <Welcome />
           <div className="shape">
@@ -51,7 +69,7 @@ function Home() {
            </div>
           </div>
         </div>
-       }
+       
       </div>
   );
 }

@@ -68,6 +68,12 @@ export const GlobalProvider = ({ children }) => {
       payload: transactions
     });
   }
+  function loadBudget(budget) {
+    dispatch({
+      type: 'LOAD_BUDGET',
+      payload: budget
+    });
+  }
 
   return (
     <GlobalContext.Provider value={{
@@ -78,7 +84,8 @@ export const GlobalProvider = ({ children }) => {
       addTransaction,
       addBudget,
       addUser,
-      loadTransactions
+      loadTransactions,
+      loadBudget
     }}>
       {children}
     </GlobalContext.Provider>

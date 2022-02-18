@@ -5,7 +5,7 @@ import './AddTransaction.css'
 
 export const AddTransaction = () => {
 
-  const[type, setType] = useState("expense");
+  const[type, setType] = useState("Expense");
   const [category,setCategory] = useState("");
   const [amount, setAmount] = useState(0);
   const [error,setError] = useState("");
@@ -25,7 +25,7 @@ export const AddTransaction = () => {
 
     const onSubmit = e => {
     e.preventDefault();
-    if(type === "expense"){
+    if(type === "Expense"){
       if(category=== ""){
         setError("Please select category")
         return
@@ -35,8 +35,8 @@ export const AddTransaction = () => {
       setError("Please Enter Amount");
       return
     }
-    // check error for expenses
-    if(type === "expense"){
+    // check error for Expenses
+    if(type === "Expense"){
       const newTransaction = {
       category,
       amount: parseFloat(amount),
@@ -54,12 +54,18 @@ export const AddTransaction = () => {
     }
 
   // checks errors for total budgets
-    if(type === "budget"){
+    if(type === "Budget"){
       
       const newBudget = {
-        id:1,
-        amount: budgets[0].amount + parseFloat(amount)
+        id:budgets[0].id,
+        amount: budgets[0].amount + parseFloat(amount),
+        date:budgets[0].date
       }
+      axios.post(`/api/budget/1`,newBudget)
+      .then ((res) => {
+       console.log("OK");
+      })
+      .catch((err) => console.log(err));
       addBudget(newBudget);
       setAmount(0);
       setError("");
@@ -69,7 +75,7 @@ export const AddTransaction = () => {
   const handleType= (e)=>{ 
     const value= e.target.value;
     setType(value);
-    setDisable(value === "budget"? true:false);
+    setDisable(value === "Budget"? true:false);
   }
 
   const handleCategory = (e)=>{ 
@@ -89,8 +95,9 @@ export const AddTransaction = () => {
 
         <div className="form-control" onChange={handleType}>
           <select >
-            <option value="expense">Expense</option>  
-            <option value="budget">Total Budget</option>
+            <option value="Expense">Expense</option>  
+            <option value="Budget">Total Budget</option>
+            
           </select>
         </div>
 
@@ -113,7 +120,7 @@ export const AddTransaction = () => {
           <br />
         </div>
 
-        <button className="btn">Add Transaction</button>
+        <button className="btn" >Add {type}</button>
 
       </form>
     </>
