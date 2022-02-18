@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import * as FaIcons from "react-icons/fa";
 import * as AiIcons from "react-icons/ai";
 import { Link } from 'react-router-dom';
@@ -6,16 +6,35 @@ import { NavbarData } from './NavbarData';
 import './Navbar.css';
 import { IconContext } from 'react-icons';
 
+
 function Sidebar() {
 
   const [sidebar, setSidebar] = useState(false);
+  const [colour, setColour] = useState(false)
+  const [dispalySidebar, setShowSidebar] = useState(true)
   const showSidebar = () => setSidebar(!sidebar);
+
+
+  useEffect(() => {
+    const location = window.location.pathname
+    if (location === '/') {
+      setShowSidebar(false)
+    }
+  }, [window.location.pathname])
+
+  useEffect(() => {
+    const location = window.location.pathname
+    if (location === '/home') {
+      setColour('#EF9D60')
+    } 
+  }, [window.location.pathname])
+
 
   return (
     <>
       <IconContext.Provider value={{ color: '#fff' }}>
         <div className="sidebar">
-          <Link to="#" className="menu-bars">
+          <Link style={{display: dispalySidebar ? undefined : 'none'}} to="#" className="menu-bars">
             <FaIcons.FaBars onClick={showSidebar} />
           </Link>
         </div>
