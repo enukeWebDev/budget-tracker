@@ -12,7 +12,7 @@ import './Home.css';
 import { GlobalContext } from '../context/GlobalState';
 
 
-function Home() {
+function Home({setTransactionHistory}) {
   const { loadTransactions,loadBudget,addBudget,loadCategoryBudget} = useContext(GlobalContext);
 
    useEffect(() =>{
@@ -26,6 +26,8 @@ function Home() {
     .then((res) =>{
       let transactions = res[0].data;
       if(res[0].data.length>0){
+        setTransactionHistory((prev => ([...transactions, transactions]))) 
+        localStorage.setItem('transactionHistory', JSON.stringify(res[0].data))
       let refatoredTransactions = transactions.map((item)=> ({
         id:item.id,
         category:item.category,

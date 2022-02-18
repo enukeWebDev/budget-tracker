@@ -22,11 +22,18 @@ const content =[{
 }
 ];
 
-function Transaction() {
-  const[transactions,setTransactions] = useState([]);
-  const contentDisplay = content.map((item)=> {
-   return <Content key={item.id} date={item.date} amount={item.amount} />
-  })
+function Transaction({transactionHistory}) {
+  const [localStorageTransactions, setLocalStorageTransactions] = useState()
+  // const[transactions,setTransactions] = useState([]);
+  // const contentDisplay = content.map((item)=> {
+  //  return <Content key={item.id} date={item.date} amount={item.amount} />
+  // })
+  console.log(transactionHistory)
+  useEffect(() => {
+    const localTransactions = JSON.parse(localStorage.getItem('transactionHistory'))
+    setLocalStorageTransactions(localTransactions)
+  }, [])
+
 
   // useEffect(()=>{
   //   let date  = new Date();
@@ -43,11 +50,9 @@ function Transaction() {
   return (
     <div className='history'> 
     <main className="transaction--layout" > 
-       <Header category="Food" expense="100" content={content}/>
-       {contentDisplay}
 
        <ul className="list">
-        {transactions.map(transaction => (<Transaction key={transaction.id} transaction={transaction} />))}
+        {localStorageTransactions ? localStorageTransactions.map(transaction => (<Content key={transaction.id} transaction={transaction} />)) : null}
       </ul>
       
     </main>
