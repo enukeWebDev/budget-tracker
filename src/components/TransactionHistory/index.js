@@ -4,48 +4,22 @@ import Header from './Header';
 import Content from './Content';
 import {useState, useEffect} from "react";
 import {Grid} from "@material-ui/core";
+import useContext from 'react'
+import { GlobalContext } from '../../context/GlobalState';
 
-const content =[{
-  id : 1,
-  date:"2022-02-12",
-  amount: 50
-},
-{  
-  id: 2,
-  date:"2022-02-12",
- amount: 50
-},
-{ 
-  id :3,
-  date:"2022-02-12",
- amount: 50
-}
-];
 
 function Transaction({transactionHistory}) {
+  const { transactions } = useContext(GlobalContext);
   const [localStorageTransactions, setLocalStorageTransactions] = useState()
-  // const[transactions,setTransactions] = useState([]);
-  // const contentDisplay = content.map((item)=> {
-  //  return <Content key={item.id} date={item.date} amount={item.amount} />
-  // })
+
+  console.log(transactions)
+
   console.log(transactionHistory)
   useEffect(() => {
     const localTransactions = JSON.parse(localStorage.getItem('transactionHistory'))
     setLocalStorageTransactions(localTransactions)
   }, [])
 
-
-  // useEffect(()=>{
-  //   let date  = new Date();
-  //   let currentMonthStartDate  = (new Date(date.getFullYear(), date.getMonth(), 1)).toLocaleDateString();
-  //   let currentMonthLastDate  = (new Date(date.getFullYear(), date.getMonth()+1, 0)).toLocaleDateString();
-  //   let userId = 1;
-
-  //   axios.get(`api/users/${userId}/transactions?start_date=${currentMonthStartDate}&end_date=${currentMonthLastDate}`)
-  //   .then((res) => {
-  //      setTransactions(res.data);
-  //   })
-  // },[])
 
   return (
     <div className='history'> 

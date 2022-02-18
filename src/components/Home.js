@@ -26,15 +26,14 @@ function Home({setTransactionHistory}) {
     .then((res) =>{
       let transactions = res[0].data;
       if(res[0].data.length>0){
-        setTransactionHistory((prev => ([...transactions, transactions]))) 
-        localStorage.setItem('transactionHistory', JSON.stringify(res[0].data))
+        // setTransactionHistory((prev => ([...transactions, transactions]))) 
+        // localStorage.setItem('transactionHistory', JSON.stringify(res[0].data))
       let refatoredTransactions = transactions.map((item)=> ({
         id:item.id,
         category:item.category,
         amount:parseFloat(item.amount),
         date:item.date
       }))
-      // console.log(refatoredTransactions);
        loadTransactions(refatoredTransactions);
     }
        if(res[1].data.length>0){
