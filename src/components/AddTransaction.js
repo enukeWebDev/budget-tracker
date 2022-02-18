@@ -2,8 +2,11 @@ import axios from 'axios';
 import React, { useState, useContext, useEffect } from 'react';
 import { GlobalContext } from '../context/GlobalState';
 import './AddTransaction.css';
+import Icon from '@mui/material/Icon';
 // import Box from '@mui/material/Box';
 // import Slider from '@mui/material/Slider';
+import AddCircleRoundedIcon from '@mui/icons-material/AddCircleRounded';
+import Tooltip from '@mui/material/Tooltip';
 
 export const AddTransaction = () => {
 
@@ -15,8 +18,7 @@ export const AddTransaction = () => {
   // const [catOptions,setCatOptions]= useState([]);
   // const [warning, setWarning] = useState("");
   const { addTransaction,transactions,budgets,addBudget,categoryBudgets,addCategoryBudget} = useContext(GlobalContext);
-
-  
+    
     const onSubmit = e => {
     e.preventDefault();
     if(type === "Expense" || type === "categoryBudget"){
@@ -116,10 +118,11 @@ export const AddTransaction = () => {
         </div>
 
         <div className="form-control" >
-          <select onChange={handleCategory} name="category" disabled={disable}>
+          <select onChange={handleCategory} name="category" disabled={disable} className="select__cat--display">
             <option value="types">Please choose category...</option>
             {selectCatOptions}
           </select>
+          <Tooltip title="Add New Category" ><AddCircleRoundedIcon  className="add__rounded__icon"/></Tooltip>
         </div>
 
 

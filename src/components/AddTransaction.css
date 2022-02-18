@@ -84,3 +84,22 @@ select {
   width:95%;
   margin-bottom: 10px;
 }
+
+.form-control {
+  display:flex;
+  
+}
+.add__rounded__icon{
+  min-width:1.6em;
+  min-height: 2.6em;
+  color: rgb(0, 143, 251);
+  font-size: 30px;
+  
+}
+.add__rounded__icon:hover {
+  cursor: pointer;
+}
+
+.select__cat--display{
+  width:90%;
+}
