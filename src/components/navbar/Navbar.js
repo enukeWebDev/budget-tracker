@@ -27,7 +27,7 @@ function Sidebar() {
                 <AiIcons.AiOutlineClose />
               </Link>
             </li>
-            {/* Mapping the sidebar data */}
+
             {NavbarData.map((item, index) => {
               return (
                 <li key={index} className={item.cName}>
@@ -39,6 +39,7 @@ function Sidebar() {
               )
             })};
           </ul>
+          
         </nav>
       </IconContext.Provider>
     </>
