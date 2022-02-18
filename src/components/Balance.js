@@ -16,7 +16,7 @@ export const Balance = () => {
   }
    
   return (
-    <div className="counter-container">
+    <div className="counter-container1">
       <img src='https://icon-library.com/images/expenses-icon/expenses-icon-20.jpg' width={100} height={100} className="icon"/ >
 
     <div className="balance">

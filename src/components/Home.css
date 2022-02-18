@@ -28,7 +28,7 @@ body {
   
 }
 .left--content{
-  width:50%;
+  width:40%;
 }
 
 .shape {
@@ -50,7 +50,7 @@ body {
 }
 .right-content {
   
-  width:50%;
+  /* width:50%; */
 }
 
 /*----------------------------------------------------*/

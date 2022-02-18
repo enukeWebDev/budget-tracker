@@ -32,7 +32,7 @@ function PieChart(){
   const series = Object.values(dataObj)
   const labels = Object.keys(dataObj);
   series.unshift(parseFloat(total));
-  labels.unshift('Balance');
+  labels.unshift('Budget');
 
   return (
     <div className="Home__page__chart">
@@ -41,8 +41,8 @@ function PieChart(){
       <Chart
        className="chart"
         type="pie"
-        width={380}
-        height={380}
+        width={480}
+        height={480}
         series={series}
         options={{
           labels:labels,
