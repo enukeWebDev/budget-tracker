@@ -12,7 +12,7 @@ import PieChart from './PieChart';
 import './Home.css';
 
 function App() {
-   
+
   return (
     <GlobalProvider>
 
@@ -20,22 +20,27 @@ function App() {
 
         <div className="centre-content">
           <Welcome />
-        
+
           <div className="shape">
 
-            <div className="left--content"> 
-            <Balance />
-            <TransactionList />
-            <AddTransaction />
+            <div className="left--content">
+              <Balance />
+              {/* <TransactionList /> */}
+              <AddTransaction />
+            </div>
+
+            <div className="right-content">
+
+              <BudgetExpense />
+              <PieChart />
+            </div>
+
+
           </div>
-        
-        <div className="right-content">
-      
-        <BudgetExpense />
-          <PieChart />
+          <div className="right-content1">
+            <TransactionList />
+          </div>
         </div>
-      </div>
-      </div>
       </div>
     </GlobalProvider>
   );
