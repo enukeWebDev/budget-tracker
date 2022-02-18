@@ -80,5 +80,7 @@ select {
   margin-top: 40px;
 }
 .slider--margin {
+  margin-left:-20px;
+  width:95%;
   margin-bottom: 10px;
 }

@@ -131,8 +131,8 @@ export const AddTransaction = () => {
             {type === "categoryBudget" && <label htmlFor="amount">Please Select Amount <br /> </label>}
           </p>
          
-          {type === "categoryBudget" && <Slider
-            className="slider--margin"
+          {type === "categoryBudget" && <p className="slider--margin">
+          <Slider
             aria-label="Always visible"
             defaultValue={0}
             value={amount}
@@ -142,7 +142,7 @@ export const AddTransaction = () => {
             valueLabelDisplay="auto"
             onChange={(e)=> setAmount(e.target.value)}
            
-          />}
+          /></p>}
           {type === "categoryBudget" && <input type='number' step="0.1" className="form__input" value={amount} disabled={true} placeholder="Enter amount..." />}
           {type === "Expense"  &&<input type='number' step="0.1" className="form__input" value={amount} onChange={(e) => setAmount(e.target.value)} placeholder="Enter amount..." />}
           {type === "Budget"  &&<input type='number' step="0.1" className="form__input" value={amount} onChange={(e) => setAmount(e.target.value)} placeholder="Enter amount..." />}
