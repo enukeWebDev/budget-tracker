@@ -1,27 +1,22 @@
 import React, { createContext, useReducer } from 'react'
+import axios from 'axios';
 import AppReducer from './AppReducer';
 
-//Initial State - negative number is expense - positive is the budget
+
+   
 const initialState = {
 
-  transactions: [
-    
-    // {}    id: 1,
-    //     category:"food";  //test data;
-    //     amount: 100
-    //   }, 
-],
-users:[],
-budgets: [  // intially budget set to zero
-   {
-    id: 1,
-    amount:0
-  }
-],
+  transactions: [],
+  users:[],
+  budgets: [  
+    {
+      id: 1,
+      amount:0
+    }
+  ],
+  categoryBudgets: []
 
 }
-
-
 
 //Create context
 export const GlobalContext = createContext(initialState);
@@ -47,6 +42,21 @@ export const GlobalProvider = ({ children }) => {
     });
   }
 
+  function addCategoryBudget(transaction) {
+    dispatch({
+      type: 'ADD_CATEGORY_BUDGET',
+      payload: transaction
+    });
+  }
+
+  function loadCategoryBudget(transactions) {
+    dispatch({
+      type: 'LOAD_CATEGORY_BUDGET',
+      payload: transactions
+    });
+  }
+
+
   // function deleteBudget(id) {
   //   dispatch({
   //     type: 'DELETE_BUDGET',
@@ -68,15 +78,33 @@ export const GlobalProvider = ({ children }) => {
     });
   }
 
+  function loadTransactions(transactions) {
+    dispatch({
+      type: 'LOAD_TRANSACTIONS',
+      payload: transactions
+    });
+  }
+  function loadBudget(budget) {
+    dispatch({
+      type: 'LOAD_BUDGET',
+      payload: budget
+    });
+  }
+
   return (
     <GlobalContext.Provider value={{
       budgets : state.budgets,
       transactions: state.transactions,
       users: state.users,
+      categoryBudgets: state.categoryBudgets,
       deleteTransaction,
       addTransaction,
       addBudget,
-      addUser
+      addUser,
+      loadTransactions,
+      loadBudget,
+      loadCategoryBudget,
+      addCategoryBudget
     }}>
       {children}
     </GlobalContext.Provider>
