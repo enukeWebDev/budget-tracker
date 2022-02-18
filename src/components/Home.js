@@ -30,6 +30,7 @@ function Home() {
         amount:parseFloat(item.amount),
         date:item.date
       }))
+      // console.log(refatoredTransactions);
        loadTransactions(refatoredTransactions);
     }
        if(res[1].data.length>0){
@@ -41,13 +42,7 @@ function Home() {
         }))
           loadBudget(newData)
           } 
-        else {
-          addBudget({
-            id: 1,
-            amount:0,
-            date: new Date()
-          })
-        } 
+        
     })
     .catch((err) => console.log(err));
    },[])

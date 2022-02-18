@@ -7,13 +7,14 @@ import AppReducer from './AppReducer';
 const initialState = {
 
   transactions: [],
-users:[],
-budgets: [  // intially budget set to zero
-   {
-    id: 1,
-    amount:0
-  }
-],
+  users:[],
+  budgets: [  
+    {
+      id: 1,
+      amount:0
+    }
+  ],
+  categoryBudgets: []
 
 }
 
@@ -40,6 +41,21 @@ export const GlobalProvider = ({ children }) => {
       payload: transaction
     });
   }
+
+  function addCategoryBudget(transaction) {
+    dispatch({
+      type: 'ADD_CATEGORY_BUDGET',
+      payload: transaction
+    });
+  }
+
+  function loadCategoryBudget(transactions) {
+    dispatch({
+      type: 'LOAD_CATEGORY_BUDGET',
+      payload: transactions
+    });
+  }
+
 
   // function deleteBudget(id) {
   //   dispatch({
@@ -80,12 +96,15 @@ export const GlobalProvider = ({ children }) => {
       budgets : state.budgets,
       transactions: state.transactions,
       users: state.users,
+      categoryBudgets: state.categoryBudgets,
       deleteTransaction,
       addTransaction,
       addBudget,
       addUser,
       loadTransactions,
-      loadBudget
+      loadBudget,
+      loadCategoryBudget,
+      addCategoryBudget
     }}>
       {children}
     </GlobalContext.Provider>

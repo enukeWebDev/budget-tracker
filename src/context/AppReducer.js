@@ -32,6 +32,19 @@ export default (state, action) => {
         budgets:[action.payload]
 
       }
+
+      case 'ADD_CATEGORY_BUDGET':
+        return {
+          ...state,
+          categoryBudgets: [action.payload, ...state.transactions]
+        }
+  
+      case 'LOAD_CATEGORY_BUDGET':
+          return {
+            ...state,
+            categoryBudgets: action.payload
+          }
+          
     case 'ADD_USER':
       return {
         ...state,
