@@ -13,14 +13,16 @@ import { GlobalContext } from '../context/GlobalState';
 
 
 function Home() {
-  const { loadTransactions,loadBudget,addBudget} = useContext(GlobalContext);
+  const { loadTransactions,loadBudget,addBudget,loadCategoryBudget} = useContext(GlobalContext);
 
    useEffect(() =>{
     let URL1 = `/api/transactions/1`;
     let URL2 = `/api/budget/1`;
+    let URL3 = `api/categories/1`
     const promise1 = axios.get(URL1);
     const promise2 = axios.get(URL2);
-    Promise.all([promise1, promise2])
+    const promise3 = axios.get(URL3);
+    Promise.all([promise1, promise2,promise3])
     .then((res) =>{
       let transactions = res[0].data;
       if(res[0].data.length>0){
@@ -41,7 +43,19 @@ function Home() {
           date:item.date
         }))
           loadBudget(newData)
-          } 
+      } 
+
+      let categoryBudgets = res[2].data;
+      if(res[2].data.length>0){
+      let refatoredCategoriesBudgets = categoryBudgets.map((item)=> ({
+        id:item.id,
+        category:item.category,
+        budget:parseFloat(item.budget),
+        date:item.date
+      }))
+      // console.log(refatoredTransactions);
+       loadCategoryBudget(refatoredCategoriesBudgets);
+    }
         
     })
     .catch((err) => console.log(err));

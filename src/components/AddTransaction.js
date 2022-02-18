@@ -1,7 +1,9 @@
 import axios from 'axios';
 import React, { useState, useContext, useEffect } from 'react';
 import { GlobalContext } from '../context/GlobalState';
-import './AddTransaction.css'
+import './AddTransaction.css';
+import Box from '@mui/material/Box';
+import Slider from '@mui/material/Slider';
 
 export const AddTransaction = () => {
 
@@ -12,17 +14,9 @@ export const AddTransaction = () => {
   const [disable,setDisable] = useState(false);
   const [catOptions,setCatOptions]= useState([]);
   const [warning, setWarning] = useState("");
-  const { addTransaction,transactions,budgets,addBudget} = useContext(GlobalContext);
+  const { addTransaction,transactions,budgets,addBudget,categoryBudgets,addCategoryBudget} = useContext(GlobalContext);
 
-   const user_id = 1;
-   useEffect(()=>{
-    axios.get(`/api/categories/${user_id}`)
-    .then((res)=>{
-        setCatOptions(res.data);   
-    })
-    .catch((err) => { console.log(err)});
-   },[]);
-
+  
     const onSubmit = e => {
     e.preventDefault();
     if(type === "Expense" || type === "categoryBudget"){
@@ -70,12 +64,32 @@ export const AddTransaction = () => {
       setAmount(0);
       setError("");
     }
+
+    if(type === "categoryBudget") {
+      const budget = categoryBudgets.filter((item) => item.category === category);
+      console.log(budget);
+      const newTransaction = {
+        category,
+        budget: budget[0].budget + parseFloat(amount),
+        date: new Date()
+        }
+        addCategoryBudget(newTransaction);
+      
+        axios.post(`/api/categories/allowances/1`,newTransaction)
+        .then ((res) => {
+         console.log("OK");
+        })
+        .catch((err) => console.log(err)); 
+        setAmount(0);
+        setError("");
+     }
   }
   
   const handleType= (e)=>{ 
     const value= e.target.value;
     setType(value);
     setDisable(value === "Budget"? true:false);
+   
   }
 
   const handleCategory = (e)=>{ 
@@ -83,8 +97,8 @@ export const AddTransaction = () => {
     setCategory(value); 
   }
 
-  const selectCatOptions = catOptions.map((item)=>
-     <option key={item.id}value={item.name}>{item.name}</option>
+  const selectCatOptions = categoryBudgets.map((item)=>
+     <option key={item.id}value={item.category}>{item.category}</option>
   )
   
 
@@ -97,7 +111,7 @@ export const AddTransaction = () => {
           <select >
             <option value="Expense">Expense</option>  
             <option value="Budget">Total Budget</option>
-            <option value="categoryBudget">Assign Budget to Categories </option>
+           { budgets[0].amount >0 &&<option value="categoryBudget">Assign Budget to Categories </option>}
           </select>
         </div>
 
@@ -112,10 +126,26 @@ export const AddTransaction = () => {
 
         <div className="form-controls">
           <p className="form__label">
-            <label htmlFor="amount">Please Enter Amount<br />
-            </label>
+            {type === "Expense" && <label htmlFor="amount">Please Enter Amount<br /> </label>}
+            {type === "Budget" && <label htmlFor="amount">Please Enter Amount<br /> </label>}
+            {type === "categoryBudget" && <label htmlFor="amount">Please Select Amount <br /> </label>}
           </p>
-          <input type='number' step="0.1" className="form__input" value={amount} onChange={(e) => setAmount(e.target.value)} placeholder="Enter amount..." />
+         
+          {type === "categoryBudget" && <Slider
+            className="slider--margin"
+            aria-label="Always visible"
+            defaultValue={0}
+            value={amount}
+            min={0}
+            max={budgets[0].amount-categoryBudgets.reduce(function (acc, obj) { return acc + obj.budget; }, 0)}
+            valueLabelDisplay="on"
+            valueLabelDisplay="auto"
+            onChange={(e)=> setAmount(e.target.value)}
+           
+          />}
+          {type === "categoryBudget" && <input type='number' step="0.1" className="form__input" value={amount} disabled={true} placeholder="Enter amount..." />}
+          {type === "Expense"  &&<input type='number' step="0.1" className="form__input" value={amount} onChange={(e) => setAmount(e.target.value)} placeholder="Enter amount..." />}
+          {type === "Budget"  &&<input type='number' step="0.1" className="form__input" value={amount} onChange={(e) => setAmount(e.target.value)} placeholder="Enter amount..." />}
           {error && <p className="form__label color--red">{error}</p>}
           <br />
         </div>

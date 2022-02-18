@@ -79,3 +79,6 @@ select {
   align-content: center;
   margin-top: 40px;
 }
+.slider--margin {
+  margin-bottom: 10px;
+}

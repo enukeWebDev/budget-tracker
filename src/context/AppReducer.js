@@ -1,3 +1,4 @@
+import { act } from "react-dom/cjs/react-dom-test-utils.production.min"
 
 export default (state, action) => {
     
@@ -34,9 +35,16 @@ export default (state, action) => {
       }
 
       case 'ADD_CATEGORY_BUDGET':
+        const copyCategoryBudgtes =[...state.categoryBudgets]
+        copyCategoryBudgtes.map((item) =>{ 
+          if(item.category === action.payload.category)
+        {
+          item.budget = action.payload.budget
+        } 
+      })
         return {
           ...state,
-          categoryBudgets: [action.payload, ...state.transactions]
+          categoryBudgets: [...copyCategoryBudgtes]
         }
   
       case 'LOAD_CATEGORY_BUDGET':
@@ -44,7 +52,7 @@ export default (state, action) => {
             ...state,
             categoryBudgets: action.payload
           }
-          
+
     case 'ADD_USER':
       return {
         ...state,
