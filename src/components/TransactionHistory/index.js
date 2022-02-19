@@ -1,9 +1,5 @@
 import './style.css';
-import axios from 'axios';
-import Header from './Header';
 import Content from './Content';
-import {useState, useEffect} from "react";
-import {Grid} from "@material-ui/core";
 import { useContext } from 'react'
 import { GlobalContext } from '../../context/GlobalState';
 
@@ -15,7 +11,7 @@ function Transaction() {
 
   return (
     <div className='history'> 
-    <main className="transaction--layout" > 
+    <main className="transaction-layout" > 
 
        <ul className="transaction-list">
         { transactions.map(transaction => (<Content key={transaction.id} transaction={transaction} />)) }
