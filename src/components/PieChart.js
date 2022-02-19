@@ -3,7 +3,7 @@ import Chart from 'react-apexcharts';
 import { GlobalContext } from '../context/GlobalState';
 import Moment from 'react-moment';
 
-function PieChart(){
+function PieChart(props){
  // const date  = new Date().toLocaleString() ;
   const { transactions , budgets} = useContext(GlobalContext);
   let date  = new Date();
@@ -50,21 +50,25 @@ function PieChart(){
             fontSize: "18px"
           },
         tooltip:{
+          // enabled: true,
           y:{
             formatter:(val)=>{
               return `$${val}`;
             }
           }
-        },
-          title:{
-            text: '',
-            responsive:true,
-            animation:{
-                animateScale: true,
+        }, 
+        chart: {
+          events: {
+            dataPointSelection: (event, chartContext, config) => {
+              console.log(config.dataPointIndex);
+              {props.setSelectedCategory(labels[config.dataPointIndex])}
             }
-          },
-        
-        }} 
+          }
+        }   
+        }
+      
+      
+      } 
       />
       <Moment className="chart__bottom chart__bottom--left" date={currentMonthLastDate} format='LL' />&nbsp;<strong>-</strong>&nbsp;
       <Moment className="chart__bottom" date={date} format='LL' />

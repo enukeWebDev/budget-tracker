@@ -1,0 +1,23 @@
+.transaction__show__header{
+  display: flex;
+  width:400px;
+  height:40px;
+  padding: 0;
+}
+.money__icon > .color--redish{
+    background-color: #dd4f4f;
+    border-radius: 20px;
+    font-size: 40px;
+}
+.transaction__show__heading> h2  {
+  margin-left: 10px;
+  margin-top: 1px;
+}
+.transaction__show__heading> p  {
+  margin-top:-20px;
+  margin-left:8px;
+}
+.total__expense{
+  margin-left:auto;
+  margin-top: auto;
+}

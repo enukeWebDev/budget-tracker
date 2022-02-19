@@ -49,10 +49,26 @@ body {
   width:100%;  
 }
 .right-content {
-  
+ 
   /* width:50%; */
 }
 
+.side--content{
+  height: fit-content;
+  background-color: #EBEBEB;
+  padding: 23px;
+ 
+  margin-top:100px;
+  border-radius: 15px;
+ margin-bottom: -5px;
+
+}
+.seconddiv {
+  max-height: 0%;
+  max-width:0%;
+  transition: 0.5s;
+  overflow: hidden;
+ }
 /*----------------------------------------------------*/
 
 /* h1 {

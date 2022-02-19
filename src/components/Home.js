@@ -1,11 +1,12 @@
 import {React, useEffect, useContext,useState} from 'react';
 import axios from 'axios';
-import { Header } from './Header';
+// import { Header } from './Header';
 import { Balance } from './Balance';
 import { BudgetExpense } from './BudgetExpense';
-import { TransactionList } from './TransactionList';
+// import { TransactionList } from './TransactionList';
 import { AddTransaction } from './AddTransaction';
-import Welcome from './Welcome'
+import Welcome from './Welcome';
+import { ShowTransactions } from './ShowTransactions';
 import './PieChart.scss'
 import PieChart from './PieChart';
 import './Home.css';
@@ -14,7 +15,7 @@ import { GlobalContext } from '../context/GlobalState';
 
 function Home() {
   const { loadTransactions,loadBudget,addBudget,loadCategoryBudget} = useContext(GlobalContext);
-
+  const [selectedCategory, setSelectedCategory] = useState("");
    useEffect(() =>{
     let URL1 = `/api/transactions/1`;
     let URL2 = `/api/budget/1`;
@@ -67,16 +68,20 @@ function Home() {
         <div className="centre-content">
           <Welcome />
           <div className="shape">
-            <div className="left--content"> 
+            <div className="left--content" > 
               <Balance />
-              <TransactionList />
               <AddTransaction />
            </div>
            <div className="right-content">
               <BudgetExpense />
-              <PieChart />
+              <PieChart
+              setSelectedCategory ={setSelectedCategory}/>
            </div>
-          </div>
+           </div>
+           <div className="side--content">
+              <ShowTransactions selectedCategory={selectedCategory}/>
+           </div>
+          
         </div>
        
       </div>
