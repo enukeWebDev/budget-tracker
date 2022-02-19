@@ -39,11 +39,11 @@ function App() {
   const [theme, setTheme] = useState("light");
 
   return (
-    <GlobalProvider>
+
+
+    < GlobalProvider >
       <main className="layout">
-        {/* <ThemeProvider theme={themes[theme]}>
-          <DarkLightMode theme={theme} setTheme={setTheme} />
-        </ThemeProvider> */}
+
         <Navbar />
         <Routes>
           <Route path="/" element={<Login />} />
@@ -51,10 +51,14 @@ function App() {
           <Route path="/home" element={<Home />} />
           <Route path="/transactions" element={<Transaction />} />
         </Routes>
+
+        <ThemeProvider theme={themes[theme]}>
+          <DarkLightMode theme={theme} setTheme={setTheme} />
+        </ThemeProvider>
       </main>
 
 
-    </GlobalProvider>
+    </GlobalProvider >
   );
 }
 

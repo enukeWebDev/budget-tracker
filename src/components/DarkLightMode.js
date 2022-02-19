@@ -16,7 +16,7 @@ const Toggle = styled.div`
     outline: none;
   }
   transition: all .5s ease;
-`
+`;
 
 const Page = styled.div`
   display: flex;
@@ -31,7 +31,8 @@ const Page = styled.div`
 const Container = styled.div`
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: end;
+  padding: 20px;
 `;
 
 // const Title = styled.h1`
@@ -53,15 +54,15 @@ function DarkLightMode(props) {
   const icon = props.theme === "light" ? <HiMoon size={40} /> : <CgSun size={40} />;
 
   return (
-    <Page>
-      <Container>
-        <Toggle onClick={changeTheme}>
-          {icon}
-        </Toggle>
-        {/* <Title>Simarjeet - Ren - Erick</Title> */}
-        {/* <Tagline>This is our awesome project for finals!</Tagline> */}
-      </Container>
-    </Page>
+    // <Page>
+    <Container>
+      <Toggle onClick={changeTheme}>
+        {icon}
+      </Toggle>
+      {/* <Title>Simarjeet - Ren - Erick</Title> */}
+      {/* <Tagline>This is our awesome project for finals!</Tagline> */}
+    </Container>
+    // </Page>
   );
 
 };
