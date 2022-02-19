@@ -1,4 +1,4 @@
-import './style.scss';
+import './style.css';
 import axios from 'axios';
 import Header from './Header';
 import Content from './Content';
@@ -17,7 +17,7 @@ function Transaction() {
     <div className='history'> 
     <main className="transaction--layout" > 
 
-       <ul className="list">
+       <ul className="transaction-list">
         { transactions.map(transaction => (<Content key={transaction.id} transaction={transaction} />)) }
       </ul>
       

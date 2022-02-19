@@ -1,0 +1,18 @@
+.transaction-list {
+  overflow: scroll;
+  height: 500px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-self: center;
+  text-align: center;
+}
+
+.history {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-content: center;
+}
+
