@@ -2,6 +2,7 @@ import axios from 'axios';
 import React, { useState, useContext, useEffect } from 'react';
 import { GlobalContext } from '../context/GlobalState';
 import './AddTransaction.css';
+import DatePicker from 'react-date-picker';
 import Icon from '@mui/material/Icon';
 // import Box from '@mui/material/Box';
 // import Slider from '@mui/material/Slider';
@@ -10,13 +11,12 @@ import Tooltip from '@mui/material/Tooltip';
 
 export const AddTransaction = () => {
 
+  const [value, setValue] = useState(new Date());
   const[type, setType] = useState("Expense");
   const [category,setCategory] = useState("");
   const [amount, setAmount] = useState(0);
   const [error,setError] = useState("");
   const [disable,setDisable] = useState(false);
-  // const [catOptions,setCatOptions]= useState([]);
-  // const [warning, setWarning] = useState("");
   const { addTransaction,transactions,budgets,addBudget,categoryBudgets,addCategoryBudget} = useContext(GlobalContext);
     
     const onSubmit = e => {
@@ -36,7 +36,7 @@ export const AddTransaction = () => {
       const newTransaction = {
       category,
       amount: parseFloat(amount),
-      date: new Date()
+      date: value
       }
       addTransaction(newTransaction);
 
@@ -51,7 +51,7 @@ export const AddTransaction = () => {
 
   // checks errors for total budgets
     if(type === "Budget"){
-      
+      console.log(value);
       const newBudget = {
         id:budgets[0].id,
         amount: budgets[0].amount + parseFloat(amount),
@@ -73,7 +73,7 @@ export const AddTransaction = () => {
       const newTransaction = {
         category,
         budget: budget[0].budget + parseFloat(amount),
-        date: new Date()
+        date: value
         }
         addCategoryBudget(newTransaction);
       
@@ -122,7 +122,7 @@ export const AddTransaction = () => {
             <option value="types">Please choose category...</option>
             {selectCatOptions}
           </select>
-          <Tooltip title="Add New Category" ><AddCircleRoundedIcon  className="add__rounded__icon"/></Tooltip>
+         
         </div>
 
 
@@ -153,6 +153,7 @@ export const AddTransaction = () => {
           <input type='number' step="0.1" className="form__input" value={amount} onChange={(e) => setAmount(e.target.value)} placeholder="Enter amount..." />
           {error && <p className="form__label color--red">{error}</p>}
           <br />
+          <DatePicker dateFormat="DD/MM/YYYY HH:mm:ss" onChange={(newValue) =>{setValue(newValue)}} value={value} className="form__input" />
         </div>
 
         {type === "Expense" &&<button className="btn" >Add {type}</button>}
