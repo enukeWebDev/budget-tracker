@@ -1,8 +1,10 @@
 .transaction__show__header{
+  padding: 8px;
   display: flex;
-  width:400px;
-  height:40px;
-  padding: 0;
+  width:300px;
+  background-color: #B3CDD1;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
 }
 .money__icon > .color--redish{
     background-color: #dd4f4f;
@@ -20,4 +22,6 @@
 .total__expense{
   margin-left:auto;
   margin-top: auto;
+  padding-bottom: 10px;
+  font-size: 1.3em;
 }

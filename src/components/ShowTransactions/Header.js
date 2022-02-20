@@ -1,7 +1,9 @@
-import React from 'react';
+import {React, useState, useContext} from 'react';
 import MoneyOffIcon from '@mui/icons-material/MoneyOff';
 import './Header.css';
+
 function Header(props) {
+  const{selectedCategory, transactions} = props;
   
   return (
     <div className="transaction__show__header">
@@ -9,14 +11,14 @@ function Header(props) {
        <MoneyOffIcon  className="color--redish"/>
        <div className="transaction__show__heading">
         <h2>
-          Grocery
+          {selectedCategory}
         </h2>
         <p>
-          4 transactions
+          {transactions.length} Transactions
         </p>
        </div>
      </div>
-     <h2 className="total__expense">${900}</h2>
+     <h2 className="total__expense">${transactions.reduce((acc, obj) =>{ return acc + obj.amount }, 0)}</h2>
      
     </div>
   );
