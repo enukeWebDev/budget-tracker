@@ -1,0 +1,46 @@
+.show__transaction__content {
+  position: relative;
+  display: flex; 
+  height: 70px;
+  font-size: 1.2em;
+  font-family: "roboto,san-serif";
+  border-bottom: 1px solid rgb(190, 185, 185);
+}
+.show__transaction__content:hover .delete-btn {
+  opacity: 1;
+}
+
+.color--red {
+  color: red;
+}
+
+.show__date--circle {
+  font-size: 1.4em;
+  font-weight:bold;
+  
+}
+
+.show__date--top {
+  padding-top: -20px;
+  font-size: 1.0em;
+  margin-right:10px;
+}
+.transaction__amount {
+  font-size: 1.2em;
+  padding: 10px;
+  justify-content: flex-end;
+  margin-left: auto;
+}
+.delete-btn {
+  cursor: pointer;
+  background-color: #e74c3c;
+  border: 2px;
+  color: #fff;
+  font-size: 30px;
+  position: absolute;
+  left:0;
+  top: 50%;
+  transform: translate(1665%, -50%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}

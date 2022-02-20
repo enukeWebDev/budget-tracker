@@ -153,7 +153,7 @@ export const AddTransaction = () => {
           <input type='number' step="0.1" className="form__input" value={amount} onChange={(e) => setAmount(e.target.value)} placeholder="Enter amount..." />
           {error && <p className="form__label color--red">{error}</p>}
           <br />
-          <DatePicker dateFormat="DD/MM/YYYY HH:mm:ss" onChange={(newValue) =>{setValue(newValue)}} value={value} className="form__input" />
+          <DatePicker dateFormat="DD/MM/YYYY HH:mm:ss"  onChange={(newValue) =>{setValue(newValue)}} value={value} className="form__input form__date" />
         </div>
 
         {type === "Expense" &&<button className="btn" >Add {type}</button>}

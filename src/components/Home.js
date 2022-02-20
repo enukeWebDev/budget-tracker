@@ -78,9 +78,9 @@ function Home() {
               setSelectedCategory ={setSelectedCategory}/>
            </div>
            </div>
-           <div className="side--content">
+          {selectedCategory  && <div className="side--content">
               <ShowTransactions selectedCategory={selectedCategory}/>
-           </div>
+           </div> }
           
         </div>
        

@@ -61,7 +61,11 @@ function PieChart(props){
           events: {
             dataPointSelection: (event, chartContext, config) => {
               console.log(config.dataPointIndex);
+              if(config.dataPointIndex > 0){
               {props.setSelectedCategory(labels[config.dataPointIndex])}
+              } else {
+              {props.setSelectedCategory("")}
+              }
             }
           }
         }   

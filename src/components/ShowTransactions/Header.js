@@ -13,9 +13,14 @@ function Header(props) {
         <h2>
           {selectedCategory}
         </h2>
+        {transactions.length >1 &&
         <p>
           {transactions.length} Transactions
-        </p>
+        </p>}
+        {transactions.length === 1 &&
+        <p>
+          {transactions.length} Transaction
+        </p>}
        </div>
      </div>
      <h2 className="total__expense">${transactions.reduce((acc, obj) =>{ return acc + obj.amount }, 0)}</h2>

@@ -12,10 +12,10 @@ body {
   margin: 0;
 }
 
-.whole-app {
+/* .whole-app {
   background-color: #4E6E5D;
   display: flex;
-}
+} */
 
 .centre-content {
   display: flex;
@@ -23,7 +23,7 @@ body {
   width: 100%;
   font-family: 'Lato', sans-serif;
  
-  align-content: center;
+  /* align-content: center; */
 
   
 }
@@ -36,21 +36,22 @@ body {
   background-color: #EBEBEB;
   padding: 23px;
   min-width:900px;
-  margin-top:100px;
-  border-radius: 15px;
+  /* min-width:fit-content; */
+ margin-top:100px;
+ border-radius: 15px;
  margin-bottom: -5px;
  display: flex;
  flex-direction: row;
  margin-right:30px;
- margin-right: 100px;
+ /* margin-right: 100px; */
 
 }
-.add__form {
+/* .add__form {
   width:100%;  
-}
+} */
 .right-content {
  
-  /* width:50%; */
+   
 }
 
 .side--content{
@@ -59,7 +60,9 @@ body {
   margin-top:100px;
   border-radius: 15px;
   margin-bottom: -5px;
-
+ 
+ 
+  
 }
 .seconddiv {
   max-height: 0%;

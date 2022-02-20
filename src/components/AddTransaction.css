@@ -85,4 +85,7 @@ select {
   margin-bottom: 10px;
 }
 
-
+.form__date {
+  visibility: hidden;
+  margin-top: -6px;
+}
