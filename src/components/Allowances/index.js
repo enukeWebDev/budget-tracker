@@ -4,17 +4,37 @@ import './index.css';
 import Topbar from './Top';
 import Bottombar from './Bottom';
 import Form from './Form';
+import {refactorBudgets, refactorForChart , convertToArray} from './helper.js';
+import { CompressOutlined } from '@mui/icons-material';
+import { v4 as uuid } from 'uuid';
 
-//Instead of passing props - just in transaction and destructure for simplicity
 const Allowances = () => {
   const [showForm , setFormDisplay] = useState(false);
-  const { transactions } = useContext(GlobalContext);
+  const { transactions , categoryBudgets} = useContext(GlobalContext);
 
+  const spendingsObject = refactorForChart(transactions);
+  const categoryBudget = refactorBudgets(categoryBudgets);
+  const key = Object.keys(categoryBudget);
+
+  const arrayOfBudgets= key.map((item,index) =>{
+  return {
+     category: item,
+     amount: categoryBudget[item]
+   }
+ })
+  const filteredArray = arrayOfBudgets.filter((item) => item.amount > 0);
+  console.log(filteredArray);
+
+  const bottom = filteredArray.map(item => {
+    const unique_id = uuid();
+   return <Bottombar key={unique_id} category={item.category} budget={item.amount} spending={spendingsObject[item.category]} />
+  })
+  
   return (
     <div>
       <div className="allowances">
         <Topbar setFormDisplay={setFormDisplay} showForm={showForm}/>
-        <Bottombar />
+        {bottom}
       
       </div>
         {showForm && <Form  setFormDisplay={setFormDisplay} showForm={showForm}/>}

@@ -2,16 +2,17 @@ import {
   LinearProgress,
   Typography,
   ThemeProvider,
-  createMuiTheme,
+  createTheme,
   Box
 } from "@material-ui/core";
 
-const ProgressBar = () => {
-  const grey = "#f5f5f5";
-  const theme = createMuiTheme({
+const ProgressBar = (props) => {
+  
+  const grey = "#B3CDD1";
+  const theme = createTheme({
     palette: {
       primary: {
-        main: "#ff0000"
+        main:"#c0392b"
       }
     },
     overrides: {
@@ -30,13 +31,13 @@ const ProgressBar = () => {
      
     }
   });
-  
+  console.log("value",props.value);
   return (
     <>
     <ThemeProvider theme={theme}>
       <Box display="flex" alignItems="center">
         <Box width="100%"  mr={1}>
-          <LinearProgress  variant="determinate" value={100} />
+          <LinearProgress  variant="determinate" value={props.value} />
         </Box>
       </Box>
     </ThemeProvider>
