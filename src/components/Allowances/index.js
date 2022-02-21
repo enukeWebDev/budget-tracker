@@ -4,8 +4,7 @@ import './index.css';
 import Topbar from './Top';
 import Bottombar from './Bottom';
 import Form from './Form';
-import {refactorBudgets, refactorForChart , convertToArray} from './helper.js';
-import { CompressOutlined } from '@mui/icons-material';
+import {refactorBudgets, refactorForChart} from './helper.js';
 import { v4 as uuid } from 'uuid';
 
 const Allowances = () => {

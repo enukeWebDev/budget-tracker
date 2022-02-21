@@ -15,9 +15,5 @@ export const refactorBudgets = (data) =>{
    return obj;
 }
 
-export const convertToArray = (data) => {
-  const Array = Object.keys(data).map(i => data[i]);
-  console.log(Array);
-  
-}
+
 
