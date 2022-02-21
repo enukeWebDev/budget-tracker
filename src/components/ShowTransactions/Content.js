@@ -4,10 +4,6 @@ import axios from 'axios';
 
 function Content(props) {
    const deleteFunc = (id) =>{
-    //  const data ={
-    //    id: id
-    //  }
-    //  console.log(data);
     axios.delete(`/api/transactions/1`, { data: { id: id } })
     .then ((res) => {
      console.log("OK");
