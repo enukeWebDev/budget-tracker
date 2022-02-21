@@ -12,10 +12,9 @@ body {
   margin: 0;
 }
 
-/* .whole-app {
-  background-color: #4E6E5D;
-  display: flex;
-} */
+.whole-app {
+  margin-left:5%;
+}
 
 .centre-content {
   display: flex;

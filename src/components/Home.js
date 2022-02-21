@@ -64,9 +64,8 @@ function Home() {
     
   return (
       <div className="whole-app">
-        
         <div className="centre-content">
-          <Welcome />
+         
           <div className="shape">
             <div className="left--content" > 
               <Balance />
