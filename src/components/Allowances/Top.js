@@ -4,8 +4,8 @@ import Moment from 'react-moment';
 import Button from '@mui/material/Button';
 import './Top.css';
 //Instead of passing props - just in transaction and destructure for simplicity
-const Top = () => {
-
+const Top = (props) => {
+  const {showForm, setFormDisplay} = props;
   const { transactions,deleteTransaction } = useContext(GlobalContext);
   const date = new Date();
   const lastDay = new Date(date.getFullYear(), date.getMonth() + 1, 0);
@@ -16,7 +16,7 @@ const Top = () => {
         <div >
         <Moment className="chart__bottom" date={firstDay} format='LL' /> -  <Moment className="chart__bottom" date={lastDay} format='LL' />
         </div>
-        <Button variant="contained" className="btn--add--allowances" style={{ backgroundColor: '#1aa333' }}>Add Allowances</Button>
+        <Button variant="contained" type="button" onClick={()=> setFormDisplay(!showForm)}className="btn--add--allowances" style={{ backgroundColor: '#1aa333' }}>Add Allowances</Button>
       </div>
       
   )
