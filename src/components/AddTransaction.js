@@ -3,11 +3,6 @@ import React, { useState, useContext, useEffect } from 'react';
 import { GlobalContext } from '../context/GlobalState';
 import './AddTransaction.css';
 import DatePicker from 'react-date-picker';
-import Icon from '@mui/material/Icon';
-// import Box from '@mui/material/Box';
-// import Slider from '@mui/material/Slider';
-import AddCircleRoundedIcon from '@mui/icons-material/AddCircleRounded';
-import Tooltip from '@mui/material/Tooltip';
 
 export const AddTransaction = () => {
 
