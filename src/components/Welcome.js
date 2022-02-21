@@ -12,7 +12,9 @@ export default function Header () {
   useEffect(() => {
     const location = window.location.pathname
     if (location === '/') {
-      setTopbar(false)
+      setTopbar(!topbar)
+    }else {
+      setTopbar(true)
     }
   }, [window.location.pathname])
 

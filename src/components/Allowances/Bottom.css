@@ -1,0 +1,21 @@
+.bottom--bar { 
+  border-bottom: 2px solid grey;
+  padding:15px;
+  padding-top: 0;
+}
+
+.bar--headers {
+  display: flex;
+  justify-content: space-between;
+}
+
+.show--right{
+  font-size: 18px;
+  display: flex;
+  flex-direction: column;
+  margin-top: 12px;
+}
+
+.assigned--money {
+  margin-left: auto;
+}

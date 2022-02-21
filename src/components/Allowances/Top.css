@@ -1,0 +1,16 @@
+.btn--add--allowances{
+  background-color: #1aa333;
+  font-size: 19px
+}
+.btn--add--allowances:hover {
+  background-color: #1aa333;
+}
+
+.top--bar{
+  display: flex;
+  justify-content: space-between;  
+  border-bottom: 2px solid grey;
+  padding:15px;
+  background-color: #B3CDD1;
+  
+}

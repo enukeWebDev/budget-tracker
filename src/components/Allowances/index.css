@@ -1,0 +1,12 @@
+.allowances {
+  min-height:40vh;
+  background-color: #EBEBEB;
+  margin: 50px;
+  margin-left: 250px;
+  /* padding: 23px; */
+  min-width:60%;
+  align-self: center;
+  font-family: 'Lato', sans-serif;
+  position:fixed;
+}
+

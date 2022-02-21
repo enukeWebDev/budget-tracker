@@ -13,7 +13,7 @@ body {
 }
 
 .whole-app {
-  margin-left:5%;
+  margin-left:250px;
 }
 
 .centre-content {
@@ -37,7 +37,7 @@ body {
   min-width:900px;
   /* min-width:fit-content; */
  margin-top:100px;
- border-radius: 15px;
+ /* border-radius: 15px; */
  margin-bottom: -5px;
  display: flex;
  flex-direction: row;

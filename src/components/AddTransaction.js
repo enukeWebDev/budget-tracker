@@ -3,13 +3,10 @@ import React, { useState, useContext, useEffect } from 'react';
 import { GlobalContext } from '../context/GlobalState';
 import './AddTransaction.css';
 import DatePicker from 'react-date-picker';
-import Icon from '@mui/material/Icon';
-// import Box from '@mui/material/Box';
-// import Slider from '@mui/material/Slider';
-import AddCircleRoundedIcon from '@mui/icons-material/AddCircleRounded';
-import Tooltip from '@mui/material/Tooltip';
+import { v4 as uuid } from 'uuid';
 
 export const AddTransaction = () => {
+  
 
   const [value, setValue] = useState(new Date());
   const[type, setType] = useState("Expense");
@@ -33,12 +30,10 @@ export const AddTransaction = () => {
     }
     // check error for Expenses
     if(type === "Expense"){
-      let id = 1;
-      if(transactions.length > 1){
-        id = transactions[transactions.length- 1].id +1;
-      }
+      const unique_id = uuid();
+      const small_id = unique_id.slice(0,8)
       const newTransaction = {
-      id,
+      id: small_id,
       category,
       amount: parseFloat(amount),
       date: value

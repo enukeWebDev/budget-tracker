@@ -1,3 +1,4 @@
+// import {useState} from 'react';
 import Login from "./components/Login";
 import Signup from "./components/Signup";
 import Home from "./components/Home";
@@ -16,6 +17,7 @@ import styled from 'styled-components';
 
 
 
+import Allowances from "./components/Allowances";
 import './App.css';
 
 //Start
@@ -58,6 +60,7 @@ function App() {
             <Route path="/signup" element={<Signup />} />
             <Route path="/home" element={<Home />} />
             <Route path="/transactions" element={<Transaction />} />
+            <Route path="/allowances" element={<Allowances/>} />
           </Routes>
 
 
