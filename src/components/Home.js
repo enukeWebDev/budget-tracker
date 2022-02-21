@@ -10,7 +10,14 @@ import './PieChart.scss'
 import PieChart from './PieChart';
 import './Home.css';
 import { GlobalContext } from '../context/GlobalState';
+import styled from 'styled-components';
 
+const Container = styled.div`
+  
+  color: ${props => props.theme.tagLineColor};
+  background-color: ${props => props.theme.pageBackground};
+  transition: all .5s ease;
+`;
 
 function Home() {
   const { loadTransactions, loadBudget, addBudget, loadCategoryBudget } = useContext(GlobalContext);
@@ -61,21 +68,23 @@ function Home() {
       .catch((err) => console.log(err));
   }, [])
 
+
+
   return (
     <div className="whole-app">
 
       <div className="centre-content">
         <Welcome />
         <div className="shape">
-          <div className="left--content">
+          <Container className="left--content">
             <Balance />
             <TransactionList />
             <AddTransaction />
-          </div>
-          <div className="right-content">
+          </Container>
+          <Container className="right-content" >
             <BudgetExpense />
             <PieChart />
-          </div>
+          </Container>
         </div>
       </div>
 

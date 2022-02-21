@@ -10,6 +10,9 @@ import Navbar from './components/navbar/Navbar'
 import DarkLightMode from "./components/DarkLightMode";
 import React, { useState } from 'react';
 import { ThemeProvider } from 'styled-components';
+import styled from 'styled-components';
+
+
 
 import './App.css';
 
@@ -31,6 +34,8 @@ const themes = {
   dark: DarkTheme
 }
 
+
+
 //End
 
 
@@ -39,26 +44,39 @@ function App() {
   const [theme, setTheme] = useState("light");
 
   return (
-
-
     < GlobalProvider >
+
       <main className="layout">
 
-        <Navbar />
-        <Routes>
-          <Route path="/" element={<Login />} />
-          <Route path="/signup" element={<Signup />} />
-          <Route path="/home" element={<Home />} />
-          <Route path="/transactions" element={<Transaction />} />
-        </Routes>
-
+        {/* <ThemeProvider theme={themes[theme]}> */}
         <ThemeProvider theme={themes[theme]}>
+          <Navbar />
+          <Routes>
+            <Route path="/" element={<Login />} />
+            <Route path="/signup" element={<Signup />} />
+            <Route path="/home" element={<Home />} />
+            <Route path="/transactions" element={<Transaction />} />
+          </Routes>
+
+
           <DarkLightMode theme={theme} setTheme={setTheme} />
+
+          {/* <Navbar />
+            <Routes>
+              <Route path="/" element={<Login />} />
+              <Route path="/signup" element={<Signup />} />
+              <Route path="/home" element={<Home />} />
+              <Route path="/transactions" element={<Transaction />} />
+            </Routes>
+          </DarkLightMode> */}
         </ThemeProvider>
+
       </main>
 
 
     </GlobalProvider >
+
+
   );
 }
 

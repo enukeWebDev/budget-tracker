@@ -18,21 +18,30 @@ const Toggle = styled.div`
   transition: all .5s ease;
 `;
 
-const Page = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  width: 100%;
-  background-color: ${props => props.theme.pageBackground};
-  transition: all .5s ease;
-`;
+// const Page = styled.div`
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+//   height: 100vh;
+//   width: 100%;
+//   background-color: ${props => props.theme.pageBackground};
+//   transition: all .5s ease;
+// `;
+
+// const Container = styled.div`
+//   display: flex;
+//   flex-direction: column;
+//   align-items: end;
+//   padding: 30px;
+//   background-color: ${props => props.theme.pageBackground};
+//   transition: all .5s ease;
+// `;
 
 const Container = styled.div`
   display: flex;
   flex-direction: column;
   align-items: end;
-  padding: 20px;
+  padding: 30px;
 `;
 
 // const Title = styled.h1`
@@ -55,7 +64,8 @@ function DarkLightMode(props) {
 
   return (
     // <Page>
-    <Container>
+    <Container className="example">
+      {props.children}
       <Toggle onClick={changeTheme}>
         {icon}
       </Toggle>
