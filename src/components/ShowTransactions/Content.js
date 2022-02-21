@@ -1,7 +1,21 @@
 import Moment from 'react-moment';
 import './content.css';
+import axios from 'axios';
 
 function Content(props) {
+   const deleteFunc = (id) =>{
+    //  const data ={
+    //    id: id
+    //  }
+    //  console.log(data);
+    axios.delete(`/api/transactions/1`, { data: { id: id } })
+    .then ((res) => {
+     console.log("OK");
+    })
+    .catch((err) => console.log(err)); 
+    console.log("axois delete");
+     props.delete(id);
+   }
   return (
     <div className="show__transaction__content" > 
      <p>
@@ -13,8 +27,7 @@ function Content(props) {
        </span>
       </p>
      <p className=" transaction__amount color--red">{props.amount} </p>
-     <button onClick={() => props.delete(props.id)}
-         className="delete-btn">x</button>
+     <button onClick={() => deleteFunc(props.id)} className="delete-btn">x</button>
     </div>
   );
 }

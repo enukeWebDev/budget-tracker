@@ -33,7 +33,12 @@ export const AddTransaction = () => {
     }
     // check error for Expenses
     if(type === "Expense"){
+      let id = 1;
+      if(transactions.length > 1){
+        id = transactions[transactions.length- 1].id +1;
+      }
       const newTransaction = {
+      id,
       category,
       amount: parseFloat(amount),
       date: value

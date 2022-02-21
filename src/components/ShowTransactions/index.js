@@ -14,7 +14,7 @@ export const ShowTransactions = (props) => {
     )
 
     const content = filteredTransactions.map((item) =>{
-      return <Content key={item.id?item.id:transactions[transactions.length-1].id+1} date={item.date} amount={item.amount} id={item.id?item.id:transactions[transactions.length-1].id+1} delete={deleteTransaction} />
+      return <Content key={item.id} date={item.date} amount={item.amount} id={item.id} delete={deleteTransaction} />
     })
 
    const arr = filteredTransactions.sort(function(x, y){
