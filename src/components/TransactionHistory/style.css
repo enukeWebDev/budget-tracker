@@ -1,0 +1,30 @@
+.transaction-list {
+  overflow: scroll;
+  height: 500px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-self: center;
+  text-align: center;
+}
+
+.history {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-content: center;
+
+  background-color: #EBEBEB;
+  margin-top: 50px;
+  padding-right: 50px;
+  border-radius: 20px;
+}
+
+.transaction-content {
+  background-color: #B3CDD1;
+  border-radius: 10px;
+  margin: 10px;
+  padding-right: 15px;
+}
+
