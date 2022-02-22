@@ -1,11 +1,8 @@
 import { React, useEffect, useContext, useState } from 'react';
 import axios from 'axios';
-// import { Header } from './Header';
 import { Balance } from './Balance';
 import { BudgetExpense } from './BudgetExpense';
-// import { TransactionList } from './TransactionList';
 import { AddTransaction } from './AddTransaction';
-import Welcome from './Welcome';
 import { ShowTransactions } from './ShowTransactions';
 import './PieChart.scss'
 import PieChart from './PieChart';
@@ -23,8 +20,6 @@ const Container = styled.div`
 function Home() {
   const { loadTransactions, loadBudget, addBudget, loadCategoryBudget } = useContext(GlobalContext);
   const [selectedCategory, setSelectedCategory] = useState("");
-  // useEffect(() => {
-  //   const { loadTransactions, loadBudget, addBudget, loadCategoryBudget } = useContext(GlobalContext);
 
   useEffect(() => {
     let URL1 = `/api/transactions/1`;
@@ -43,7 +38,6 @@ function Home() {
             amount: parseFloat(item.amount),
             date: item.date
           }))
-          // console.log(refatoredTransactions);
           loadTransactions(refatoredTransactions);
         }
         if (res[1].data.length > 0) {
@@ -76,27 +70,21 @@ function Home() {
 
   return (
     <div className="whole-app">
-
-      <div className="centre-content">
-        <Welcome />
+      <div className="centre-content"> 
         <div className="shape">
           <Container className="left--content">
             <Balance />
-            {/* <TransactionList /> */}
             <AddTransaction />
           </Container>
           <Container className="right-content" >
             <BudgetExpense />
-            <PieChart />
+            <PieChart setSelectedCategory ={setSelectedCategory}/>
           </Container>
-
         </div>
-
-        {selectedCategory && <div className="side--content">
-          <ShowTransactions selectedCategory={selectedCategory} />
+            {selectedCategory && <div className="side--content">
+             <ShowTransactions selectedCategory={selectedCategory} />
         </div>}
       </div>
-
     </div >
   );
 }

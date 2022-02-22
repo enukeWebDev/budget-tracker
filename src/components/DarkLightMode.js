@@ -9,6 +9,8 @@ const Toggle = styled.div`
   height: 50px;
   width: 50px;
   border-radius: 50%;
+  margin-top:-70px;
+  margin-left:auto;
   border: none;
   background-color: ${props => props.theme.titleColor};
   color: ${props => props.theme.pageBackground};
@@ -41,7 +43,7 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   align-items: end;
-  padding: 30px;
+  
 `;
 
 // const Title = styled.h1`

@@ -5,9 +5,7 @@ import Home from "./components/Home";
 import Transaction from "./components/TransactionHistory";
 import { Routes, Route } from "react-router-dom";
 import { GlobalProvider } from './context/GlobalState';
-// import Navbar from './components/navbar/Navbar'
 import Welcome from './components/Welcome'
-import Navbar from './components/navbar/Navbar'
 
 //Add these
 import DarkLightMode from "./components/DarkLightMode";
@@ -49,12 +47,12 @@ function App() {
 
   return (
     < GlobalProvider >
-
+      <Welcome />
       <main className="layout">
-
+      <DarkLightMode theme={theme} setTheme={setTheme} />
         {/* <ThemeProvider theme={themes[theme]}> */}
         <ThemeProvider theme={themes[theme]}>
-          <Welcome />
+          
           <Routes>
             <Route path="/" element={<Login />} />
             <Route path="/signup" element={<Signup />} />
@@ -64,7 +62,7 @@ function App() {
           </Routes>
 
 
-          <DarkLightMode theme={theme} setTheme={setTheme} />
+          
 
           {/* <Navbar />
             <Routes>
