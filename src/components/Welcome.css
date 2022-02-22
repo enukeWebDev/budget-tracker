@@ -5,9 +5,13 @@
   height:60px;
   padding:15px;
   display:flex;
-  justify-content: space-between;
+ 
 }
 .mic {
-  color: red;
-  width:50px;
+  justify-content: 30%;
+  align-content: flex-end;
+  color: green;
+  width:80px;
+  margin-right: 100px;
+  cursor: pointer;
 }

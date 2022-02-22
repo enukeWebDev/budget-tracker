@@ -22,8 +22,8 @@ export default function Header () {
     <>
    {topbar && <h2 className="welcome">
       <Navbar />
-  <Dictaphone />
-     <MicIcon className="mic" />
+    <Dictaphone className="mic"/>
+    
 
     </h2>}
     </>
