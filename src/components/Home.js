@@ -10,6 +10,7 @@ import './Home.css';
 import { GlobalContext } from '../context/GlobalState';
 import styled from 'styled-components';
 
+
 const Container = styled.div`
   
   color: ${props => props.theme.tagLineColor};
@@ -70,6 +71,7 @@ function Home() {
 
   return (
     <div className="whole-app">
+      
       <div className="centre-content"> 
         <div className="shape">
           <Container className="left--content">
