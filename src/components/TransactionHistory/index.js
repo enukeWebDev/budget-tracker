@@ -28,9 +28,8 @@ function Transaction() {
             </ul>
           </main>
 
-        <div className='sort-options'>
-        <DisplayOrder />
-        <ShowOnly />
+        <div className='end-of-page'>
+        End of Page
         </div>
       </div>
     </div>
