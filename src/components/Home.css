@@ -32,7 +32,7 @@ body {
   /* background-color: #EBEBEB; */
   /* padding: 23px; */
   min-width:900px;
-  margin-top:100px;
+  margin-top:50px;
   /* margin-bottom: -5px; */
   display: flex;
   flex-direction: row;
@@ -45,9 +45,8 @@ body {
 .side--content{
  
   background-color: #EBEBEB;
-  margin-top:100px;
-  border-radius: 15px;
-  margin-bottom: -5px;
+  margin-top:50px;
+  margin-bottom: -1px;
   
 }
 

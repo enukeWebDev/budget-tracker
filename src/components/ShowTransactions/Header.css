@@ -3,8 +3,8 @@
   display: flex;
   width:450px;
   background-color: #B3CDD1;
-  border-top-left-radius: 15px;
-  border-top-right-radius: 15px;
+  /* border-top-left-radius: 15px;
+  border-top-right-radius: 15px; */
 }
 .money__icon > .color--redish{
     background-color: #dd4f4f;
