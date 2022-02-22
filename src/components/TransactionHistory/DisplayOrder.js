@@ -39,8 +39,8 @@ export default function DisplayOrder() {
           horizontal: 'left',
         }}
       >
-        <MenuItem onClick={handleClose}>Most Recent</MenuItem>
-        <MenuItem onClick={handleClose}>Least Recent</MenuItem>
+        <MenuItem onClick={handleClose}>Newest to Oldest</MenuItem>
+        <MenuItem onClick={handleClose}>Oldest to Newest</MenuItem>
       </Menu>
     </div>
   );
