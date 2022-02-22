@@ -7,6 +7,8 @@
   align-items: center;
   align-self: center;
   text-align: center;
+  width: 100%;
+  padding-left: 0px;
 }
 
 .history {
@@ -17,7 +19,8 @@
 
   background-color: #EBEBEB;
   margin-top: 50px;
-  padding-right: 50px;
+  width: 60%;
+  margin-left: 20%;
   border-radius: 20px;
 }
 
@@ -27,4 +30,6 @@
   margin: 10px;
   padding-right: 15px;
 }
+
+
 
