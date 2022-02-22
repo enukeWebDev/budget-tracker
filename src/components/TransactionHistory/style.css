@@ -1,3 +1,11 @@
+.t-history_page-title {
+  display: flex;
+  text-align: center;
+  margin: auto;
+  width: 25%;
+  padding: 0;
+}
+
 .transaction-list {
   overflow: scroll;
   height: 500px;
@@ -29,6 +37,11 @@
   border-radius: 10px;
   margin: 10px;
   padding-right: 15px;
+}
+
+.sort-options {
+  display: flex;
+  padding-top: 1em;
 }
 
 

@@ -14,9 +14,8 @@ function Transaction() {
 
   return (
     <>
-      <h1>Transaction History</h1>
+      <h1 className='t-history_page-title'>Transaction History</h1>
       <div className='history'> 
-        <h1>Transaction History</h1>
         <div className='sort-options'>
         <DisplayOrder />
         <ShowOnly />
