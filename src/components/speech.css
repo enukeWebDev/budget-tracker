@@ -1,5 +1,13 @@
-.mic{
+.mic:hover{
  
-  background-color: rgb(221, 99, 99);
-  border-radius: 20%;
+  animation: tweeder 1s infinite ease;
+}
+
+@keyframes tweeder{
+  0%{ transform: scale(1.1) }
+  15%{ transform: scale(1.15) }
+  35%{ transform: scale(1.1)}
+  70%{ transform: scale(1.15) }
+  90%{ transform: scale(1.1) }
+  100%{ transform: scale(1.1) }
 }

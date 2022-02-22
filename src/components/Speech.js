@@ -15,6 +15,15 @@ const Dictaphone = () => {
   //   const thingToSay = 'Sorry i did not get it please try manually';
   //   Speech.speak(thingToSay);
   // };
+  const styles = {
+
+    largeIcon: {
+      width: 50,
+      height: 50,
+      
+    },
+  
+  };
   const commands = [
     {
       command:'(add) expense to :category :money (dollars)',
@@ -62,13 +71,10 @@ const Dictaphone = () => {
 
   return (
     <div>
-       {/* <p>{message}</p>
-      <p>Microphone: {listening ? 'on' : 'off'}</p> */}
-      <div className="mic" onClick={SpeechRecognition.startListening}> <MicIcon /></div>
-      {/* <button onClick={SpeechRecognition.startListening}>Start</button>
-      <button onClick={SpeechRecognition.stopListening}>Stop</button>
-      <button onClick={resetTranscript}>Reset</button>
-      <p>{transcript}</p> */}
+      <div className="mic" onMouseOver={SpeechRecognition.startListening}> 
+      <MicIcon style={styles.largeIcon}/>
+      </div>
+    
      
     </div>
   );
