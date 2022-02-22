@@ -1,3 +1,72 @@
+Starts saving for your future - use this interactive and simple yet elegant Budget Tracker App with Voice Command!
+
+Budget Tracker App is a full-stack application that allows users to plan their monthly budget. 
+
+  - Users can assign a monthly budget 
+
+  - Users is provided a different expense categories to choose from
+    - can assign specific amount for specific categories
+
+  - Users is provided with simple yet elegant dashboard for transactions and live updates 
+    - the simplicity of the dashboard will provide a great experience for users - super users friendly!
+    - live update of each transaction - whether it's to add budget or to add expense
+    - a specific container is assign for expenses and will live update the dollar value everytime a transaction is added - same for budget
+
+  - Users is provided a live update monitoring pie chart
+    - every transactions created/added/deducted will automatically feed the pie chart - sorted per category
+    - the pie chart provides the summary of transactions per categories
+    - users can click the specific categories on the pie chart and the summary of the transactions for the specific category will show on the right side on a separate table - otherwise this table is hidden
+    - the pie chart shows a visual confirmation of each transactions made by the users
+
+  - Users is provided a detailed information of their activities on a separate page - this can easily be accessed on the sidebar - otherwise the sidebar is hidden
+    - there is a page for users to manage a budget for specific expense categories - "Adjust Budget" page
+    - there is a page for users to view a detailed information of the transaction history = "Transaction History" page
+
+  - Users is provided with the option of darkmode screen on the main dashboard
+
+  - Finally, this app is capable of accepting instructions thru VOICE COMMAND -  this part of the project is on the initial working state - it is working perfectly fine for simple instructions, however, we believe that we can utilize this capability more
+
+  - Stretch feature that we are planning to add to this app in the coming months
+    - Utilize the voice command more
+    - Link to actual/personal bank account 
+    - Generate a separate chart for each categories
+    
+
+Stack Tech and why we choose them:
+
+  PostgreSQL - for Database Management
+    - Protects data integrity
+    - Highly extensible
+    - Robust access-control system
+    - Builds fault-tolerant environments
+
+  Express - for Backend-End Framework
+    - Supports many middleware
+    - Makes back-end code easier and simpler to write
+    - Creating efficient and robust API is quick and easy
+  
+  React - for Front-End Library
+    - Allows its components to be reused saving time and effort
+    - Efficient and painless way to create interactive UI's
+    - It guarantees stable code
+    - Provided the feature of Virtual DOM
+
+  Node.js - for JS Runtime Environment
+    - Highly scalable
+    - Highly extensible
+    - Provides vast number of libraries
+
+  Dependencies - available in package.json
+
+  Database Set-up
+
+
+    
+
+
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
