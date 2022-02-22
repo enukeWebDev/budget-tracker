@@ -39,6 +39,7 @@ export default function ShowOnly() {
           horizontal: 'left',
         }}
       >
+        <MenuItem onClick={handleClose}>All Categories</MenuItem>
         <MenuItem onClick={handleClose}>Food</MenuItem>
         <MenuItem onClick={handleClose}>Grocery</MenuItem>
         <MenuItem onClick={handleClose}>Phone</MenuItem>
