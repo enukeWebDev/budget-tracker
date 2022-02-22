@@ -13,20 +13,27 @@ function Transaction() {
 
 
   return (
-    <>
+    <div className='bg'>
       <h1 className='t-history_page-title'>Transaction History</h1>
       <div className='history'> 
+
         <div className='sort-options'>
         <DisplayOrder />
         <ShowOnly />
         </div>
+
           <main className="transaction-layout" > 
             <ul className="transaction-list">
               { transactions.map(transaction => (<Content key={transaction.id} transaction={transaction} />)) }
             </ul>
           </main>
+
+        <div className='sort-options'>
+        <DisplayOrder />
+        <ShowOnly />
+        </div>
       </div>
-    </>
+    </div>
   );
 }
 
