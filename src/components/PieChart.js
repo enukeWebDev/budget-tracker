@@ -37,7 +37,7 @@ function PieChart(props){
   return (
     <div className="Home__page__chart">
       <div className="pie__chart__background--color">
-        <p className="chart__title "><span className="color--blue">Balance </span> vs <span className="color--red"> Expenses</span> </p>
+        <p className="chart__title "><span className="color--blue">Budget </span>&nbsp;vs<span className="color--red">Expenses</span> </p>
       <Chart
        className="chart"
         type="pie"

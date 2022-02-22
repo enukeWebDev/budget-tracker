@@ -2,7 +2,7 @@ import {React ,useState, useEffect}from 'react'
 import './Welcome.css'
 import Navbar from './navbar/Navbar'
 import MicIcon from '@mui/icons-material/Mic';
-
+import Dictaphone from './Speech.js'
 export default function Header () {
 
   const [topbar, setTopbar] = useState(true);
@@ -22,7 +22,9 @@ export default function Header () {
     <>
    {topbar && <h2 className="welcome">
       <Navbar />
-     {/* <MicIcon className="mic" /> */}
+    <Dictaphone className="mic"/>
+    
+
     </h2>}
     </>
   )

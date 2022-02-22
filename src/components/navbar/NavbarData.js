@@ -14,7 +14,7 @@ export const NavbarData = [
   },
 
   {
-    title: "Adjust Budgets",
+    title: "Adjust Allowances",
     path: "/allowances",
     icon: <GiReceiveMoney />,
     cName: "nav-text"
