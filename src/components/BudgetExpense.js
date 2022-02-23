@@ -13,7 +13,7 @@ export const BudgetExpense = () => {
     <div className="counter-container">
 
       <div className="budget">
-        <h4>Total Budget</h4>
+        <h4>Budget</h4>
         <p className="money-plus">${budgets[0].amount.toFixed(2)}</p>
       </div>
 
