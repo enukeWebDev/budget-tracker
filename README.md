@@ -1,4 +1,4 @@
-Starts saving for your future - use this interactive and simple yet elegant Budget Tracker App with Voice Command!
+Starts saving for your future - use this interactive and simple yet elegant *Budget Tracker App with Voice Command!*
 
 Budget Tracker App is a full-stack application that allows users to plan their monthly budget. 
 
@@ -32,33 +32,44 @@ Budget Tracker App is a full-stack application that allows users to plan their m
     - Generate a separate chart for each categories
     
 
-Stack Tech and why we choose them:
+**Stack Tech and why we choose them:**
 
-  PostgreSQL - for Database Management
+  *PostgreSQL - for Database Management*
     - Protects data integrity
     - Highly extensible
     - Robust access-control system
     - Builds fault-tolerant environments
 
-  Express - for Backend-End Framework
+  *Express - for Backend-End Framework*
     - Supports many middleware
     - Makes back-end code easier and simpler to write
     - Creating efficient and robust API is quick and easy
   
-  React - for Front-End Library
+  *React - for Front-End Library*
     - Allows its components to be reused saving time and effort
     - Efficient and painless way to create interactive UI's
     - It guarantees stable code
     - Provided the feature of Virtual DOM
 
-  Node.js - for JS Runtime Environment
+  *Node.js - for JS Runtime Environment*
     - Highly scalable
     - Highly extensible
     - Provides vast number of libraries
 
-  Dependencies - available in package.json
+  *Dependencies - available in package.json*
 
-  Database Set-up
+  **Getting Started with Create React App**
+
+    1. This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app)
+
+    2. In the project directory, you can run 
+      - npm start
+    
+    3. Runs the app in the development mode
+    
+    4. Open (http://localhost:3000) to view it in your browser
+
+  **Database Set-up**
 
 
     
@@ -67,7 +78,7 @@ Stack Tech and why we choose them:
 
 
 
-# Getting Started with Create React App
+<!-- # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
@@ -136,4 +147,4 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 
 ### `npm run build` fails to minify
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify) -->
