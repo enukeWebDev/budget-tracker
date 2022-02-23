@@ -14,16 +14,16 @@ export const NavbarData = [
   },
 
   {
-    title: "Adjust Allowances",
+    title: "Allowances",
     path: "/allowances",
     icon: <GiReceiveMoney />,
     cName: "nav-text"
   },
 
   {
-    title: "Transaction History",
+    title: "Transactions",
     path: "/transactions",
-    icon: <FaHistory/>,
+    icon: <FaHistory />,
     cName: "nav-text"
   },
 

@@ -1,30 +1,37 @@
-import './style.scss';
-import axios from 'axios';
-import Header from './Header';
+import './style.css';
 import Content from './Content';
-import {useState, useContext} from "react";
-import {Grid} from "@material-ui/core";
+import { useContext } from 'react'
 import { GlobalContext } from '../../context/GlobalState';
+import DisplayOrder from './DisplayOrder';
+import ShowOnly from './ShowOnly';
+
+
 
 function Transaction() {
-  const{transactions}= useContext(GlobalContext);
-  console.log(transactions);
-  // const contentDisplay = transactions.map((item)=> {
-  //  return <Content key={item.id} date={item.date} amount={item.amount} />
-  // })
+  const { transactions } = useContext(GlobalContext);
+  console.log(transactions)
 
 
   return (
-    <div className='history'> 
-    <main className="transaction--layout" > 
-       {/* <Header category="Food" expense="100" content={content}/>
-       {contentDisplay}
+    <div className='bg'>
+      <h1 className='t-history_page-title'>Transaction History</h1>
+      <div className='history'> 
 
-       <ul className="list">
-        {transactions.map(transaction => (<Transaction key={transaction.id} transaction={transaction} />))} */}
-      {/* </ul> */}
-      
-    </main>
+        <div className='sort-options'>
+        <DisplayOrder />
+        <ShowOnly />
+        </div>
+
+          <main className="transaction-layout" > 
+            <ul className="transaction-list">
+              { transactions.map(transaction => (<Content key={transaction.id} transaction={transaction} />)) }
+            </ul>
+          </main>
+
+        <div className='end-of-page'>
+        End of Page
+        </div>
+      </div>
     </div>
   );
 }

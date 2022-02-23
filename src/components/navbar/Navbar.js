@@ -23,7 +23,7 @@ function Sidebar() {
   }, [window.location.pathname])
 
   return (
-    <>
+    <div className='whole-ass-bar'>
       <IconContext.Provider value={{ color: '#fff' }}>
         <div className="sidebar">
           <Link style={{display: dispalySidebar ? undefined : 'none'}} to="#" className="menu-bars">
@@ -53,7 +53,7 @@ function Sidebar() {
 
         </nav>
       </IconContext.Provider>
-    </>
+    </div>
   )
 }
 
