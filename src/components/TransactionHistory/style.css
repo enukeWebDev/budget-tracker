@@ -15,7 +15,8 @@
   padding-top: 1em;
   display: flex;
   justify-content: space-around;
-
+  
+  z-index: 1;
   background-color: #B3CDD1;
   width: 100%;
 }

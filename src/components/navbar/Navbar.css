@@ -1,3 +1,7 @@
+.whole-ass-bar {
+  z-index: 2;
+}
+
 .sidebar {
   height: 80px;
   display: flex;
@@ -5,7 +9,7 @@
   align-items: center;
   padding: 5px;
   /* margin: 10px; */
-  margin-left: 25px;
+  /* margin-left: 25px; */
   margin-top:-20px;
 }
 
@@ -33,11 +37,15 @@
   transition: 350ms;
 }
 
+.nav-menu-items {
+  padding-left: 10px;
+}
+
 .nav-text {
   display: flex;
   justify-content: start;
   align-items: center;
-  padding: 8px 0px 8px 16px;
+  /* padding: 8px 0px 8px 16px; */
   list-style: none;
   height: 60px;
 }
@@ -50,7 +58,7 @@
   height: 100%;
   display: flex;
   align-items: center;
-  padding: 0 16px;
+  /* padding: 0 16px; */
   border-radius: 4px;
 }
 
@@ -60,6 +68,7 @@
 
 .nav-text .active {
   background-color: #EF9D60;
+
 }
 
 .nav-menu-items {

@@ -21,9 +21,9 @@ export const NavbarData = [
   },
 
   {
-    title: "Transaction History",
+    title: "History",
     path: "/transactions",
-    icon: <FaHistory/>,
+    icon: <FaHistory />,
     cName: "nav-text"
   },
 
