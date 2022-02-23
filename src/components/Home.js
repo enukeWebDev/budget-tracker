@@ -4,12 +4,15 @@ import { Balance } from './Balance';
 import { BudgetExpense } from './BudgetExpense';
 import { AddTransaction } from './AddTransaction';
 import { ShowTransactions } from './ShowTransactions';
+import { ShowTransactionsMobile } from './ShowTransactionsMobile';
 import './PieChart.scss'
 import PieChart from './PieChart';
 import './Home.css';
 import { GlobalContext } from '../context/GlobalState';
 import styled from 'styled-components';
-
+import MobileHeader from './MobileHeader';
+import MobilePieChart from './MobilePieChart';
+import { AddTransactionMobile } from './AddTransactionMobile';
 
 const Container = styled.div`
   
@@ -18,10 +21,11 @@ const Container = styled.div`
   transition: all .5s ease;
 `;
 
-function Home() {
+function Home(props) {
   const { loadTransactions, loadBudget, addBudget, loadCategoryBudget } = useContext(GlobalContext);
   const [selectedCategory, setSelectedCategory] = useState("");
-
+  const {screenWidth, form} = props;
+  console.log("from homw",screenWidth);
   useEffect(() => {
     let URL1 = `/api/transactions/1`;
     let URL2 = `/api/budget/1`;
@@ -67,10 +71,10 @@ function Home() {
       .catch((err) => console.log(err));
   }, [])
 
-
-
   return (
-    <div className="whole-app">
+    <>
+    {screenWidth >= 1000 && 
+   <div className="whole-app">
       
       <div className="centre-content"> 
         <div className="shape">
@@ -83,12 +87,26 @@ function Home() {
             <PieChart setSelectedCategory ={setSelectedCategory}/>
           </Container>
         </div>
-            {selectedCategory && <div className="side--content">
-             <ShowTransactions selectedCategory={selectedCategory} />
-        </div>}
+            {selectedCategory && 
+            <div className="side--content">
+             <ShowTransactions selectedCategory={selectedCategory} />  
+            </div>}
       </div>
-    </div >
+   </div>}
+     {screenWidth < 1000 && 
+      <div className="mobile--center">
+        <MobileHeader className="mobile-head" setSelectedCategory={setSelectedCategory}/>
+          {form && <AddTransactionMobile className="mobile-form"/>}
+         {!form && <div className="mobile-chart">
+           <MobilePieChart setSelectedCategory={setSelectedCategory}/>
+        </div>}
+        {selectedCategory && 
+        <div className="mobile-side--content">              
+          <ShowTransactionsMobile selectedCategory={selectedCategory} />
+        </div>}
+     
+      </div>}
+    </>
   );
-}
-
+ }
 export default Home;
