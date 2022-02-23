@@ -6,15 +6,14 @@ import MicIcon from '@mui/icons-material/Mic';
 import { v4 as uuid } from 'uuid';
 import axios from 'axios';
 import './speech.css';
+import AddIcon from './AddIcon';
+// import AddCircleIcon from '@mui/icons-material/AddCircle';
 
-
-const Dictaphone = () => {
+const Dictaphone = (props) => {
   const [message, setMessage] = useState('');
+  const {form,openForm} = props;
   const { addTransaction,categoryBudgets} = useContext(GlobalContext);
-  // const speak = () => {
-  //   const thingToSay = 'Sorry i did not get it please try manually';
-  //   Speech.speak(thingToSay);
-  // };
+  
   const styles = {
 
     largeIcon: {
@@ -69,10 +68,12 @@ const Dictaphone = () => {
     return <span>Browser doesn't support speech recognition.</span>;
   }
 
+
   return (
     <div>
-      <div className="mic" onMouseOver={SpeechRecognition.startListening}> 
-      <MicIcon style={styles.largeIcon}/>
+      <div className="mic" onClick={SpeechRecognition.startListening}> 
+      {props.screenWidth < 1050 && <span onClick={() =>{openForm(!form)}}><AddIcon /></span>}
+      <MicIcon className="mic-up" style={styles.largeIcon}/>
       </div>
     
      
