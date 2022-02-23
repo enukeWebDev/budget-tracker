@@ -37,15 +37,11 @@
   transition: 350ms;
 }
 
-.nav-menu-items {
-  padding-left: 10px;
-}
-
 .nav-text {
   display: flex;
   justify-content: start;
   align-items: center;
-  /* padding: 8px 0px 8px 16px; */
+
   list-style: none;
   height: 60px;
 }
@@ -58,7 +54,7 @@
   height: 100%;
   display: flex;
   align-items: center;
-  /* padding: 0 16px; */
+  justify-content: space-evenly;
   border-radius: 4px;
 }
 
@@ -68,7 +64,6 @@
 
 .nav-text .active {
   background-color: #EF9D60;
-
 }
 
 .nav-menu-items {
@@ -81,8 +76,4 @@
   display: flex;
   justify-content: start;
   align-items: center;
-}
-
-span {
-  margin-left: 16px;
 }
