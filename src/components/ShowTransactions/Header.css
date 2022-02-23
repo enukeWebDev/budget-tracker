@@ -1,23 +1,22 @@
 .transaction__show__header{
   padding: 8px;
-  display: flex;
-  width:450px;
+  display: flex; 
+   width:450px;
   background-color: #B3CDD1;
-  /* border-top-left-radius: 15px;
-  border-top-right-radius: 15px; */
+  /* padding-top:-20px; */
 }
-.money__icon > .color--redish{
+/* .money__icon > .color--redish{
     background-color: #dd4f4f;
     border-radius: 20px;
     font-size: 40px;
-}
+} */
 .transaction__show__heading> h2  {
-  margin-left: 10px;
-  margin-top: 1px;
+  margin-left: 50px;
+  margin-top: -80px;
 }
 .transaction__show__heading> p  {
   margin-top:-20px;
-  margin-left:8px;
+  margin-left:30px;
 }
 .total__expense{
   margin-left:auto;

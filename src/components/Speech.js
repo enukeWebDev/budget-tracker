@@ -71,7 +71,7 @@ const Dictaphone = (props) => {
 
   return (
     <div>
-      <div className="mic" onClick={SpeechRecognition.startListening}> 
+      <div className="mic" onMouseOver={SpeechRecognition.startListening}> 
       {props.screenWidth < 1050 && <span onClick={() =>{openForm(!form)}}><AddIcon /></span>}
       <MicIcon className="mic-up" style={styles.largeIcon}/>
       </div>

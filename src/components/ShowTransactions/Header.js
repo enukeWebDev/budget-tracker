@@ -9,6 +9,7 @@ function Header(props) {
     <div className="transaction__show__header">
      <div className="money__icon">
        <MoneyOffIcon  className="color--redish"/>
+       </div>
        <div className="transaction__show__heading">
         <h2>
           {selectedCategory}
@@ -22,7 +23,7 @@ function Header(props) {
           {transactions.length} Transaction
         </p>}
        </div>
-     </div>
+   
      <h2 className="total__expense">${transactions.reduce((acc, obj) =>{ return acc + obj.amount }, 0)}</h2>
      
     </div>
