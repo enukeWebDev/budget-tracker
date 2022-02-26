@@ -130,7 +130,6 @@ export const AddTransaction = () => {
           <p className="form__label">
             <label htmlFor="amount">Please Enter Amount<br /> </label>
           </p>
-
           <input type='number' step="0.1" className="form__input" value={amount} onChange={(e) => setAmount(e.target.value)} placeholder="Enter amount..." />
           {error && <p className="form__label color--red">{error}</p>}
           <br />

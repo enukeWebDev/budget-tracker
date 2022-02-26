@@ -27,7 +27,6 @@ const Container = styled.div`
   
 `;
 
-
 function DarkLightMode(props) {
   function changeTheme() {
     if (props.theme === "light") {

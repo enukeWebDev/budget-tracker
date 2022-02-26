@@ -2,12 +2,12 @@
 import Login from "./components/Login";
 import Signup from "./components/Signup";
 import Home from "./components/Home";
-import Transaction from "./components/TransactionHistory";
+import Transaction from "./components/TransactionHistoryold";
 import { Routes, Route } from "react-router-dom";
 import { GlobalProvider } from './context/GlobalState';
 import Welcome from './components/Welcome';
 import DarkLightMode from "./components/DarkLightMode";
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { ThemeProvider } from 'styled-components';
 import styled from 'styled-components';
 import Allowances from "./components/Allowances";
@@ -33,10 +33,23 @@ const themes = {
 function App() {
 
   const [theme, setTheme] = useState("light");
+  const [screenWidth, setScreenWidth] = useState(window.innerWidth);
+  const [form, openForm] = useState(false);
+  useEffect(() => {
+    const resizeListener = () => {
+      setScreenWidth(window.innerWidth)
+    };
+    window.addEventListener('resize', resizeListener);
+
+    return () => {
+      window.removeEventListener('resize', resizeListener);
+    }
+  }, [])
+  
 
   return (
     < GlobalProvider >
-      <Welcome />
+      <Welcome screenWidth={screenWidth} form={form} openForm={openForm}/>
       <main className="layout">
         <DarkLightMode theme={theme} setTheme={setTheme} />
         {/* <ThemeProvider theme={themes[theme]}> */}
@@ -45,7 +58,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Login />} />
             <Route path="/signup" element={<Signup />} />
-            <Route path="/home" element={<Home />} />
+            <Route path="/home" element={<Home  screenWidth={screenWidth} form={form}/>} />
             <Route path="/transactions" element={<Transaction />} />
             <Route path="/allowances" element={<Allowances />} />
           </Routes>

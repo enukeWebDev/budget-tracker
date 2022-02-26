@@ -1,3 +1,9 @@
 body {
-  background-color: #4E6E5D;
+background-color: #4E6E5D;
+background-color: #072d3c; 
+background: #254b58;
+background: -webkit-linear-gradient(top left, #010f14 0%, #010f14 100%);
+background: -moz-linear-gradient(top left, #010f14 0%, #010f14 100%);
+background: -o-linear-gradient(top left, #010f14 0%, #010f14 100%);
+
 }

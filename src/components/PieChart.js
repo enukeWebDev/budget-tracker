@@ -3,6 +3,7 @@ import Chart from 'react-apexcharts';
 import { GlobalContext } from '../context/GlobalState';
 import Moment from 'react-moment';
 
+<<<<<<< HEAD
 function PieChart(props) {
 
   const { transactions, budgets } = useContext(GlobalContext);
@@ -11,6 +12,17 @@ function PieChart(props) {
 
   const refactorForChart = (data) => {
     let totalExpenseByCategory = {};
+=======
+function PieChart(props){
+ // const date  = new Date().toLocaleString() ;
+  const { transactions , budgets} = useContext(GlobalContext);
+  let date  = new Date();
+  const lastDay = new Date(date.getFullYear(), date.getMonth() + 1, 0);
+  let currentMonthLastDate  = (new Date(date.getFullYear(), date.getMonth(), 1));
+  
+  const refactorForChart = (data) =>{
+    let totalExpenseByCategory={};
+>>>>>>> 1deae7546ea46346b96f7042a21ceec2db321b68
     data.forEach(item => {
       !totalExpenseByCategory[item.category] ? totalExpenseByCategory[item.category] = item.amount : totalExpenseByCategory[item.category] += item.amount;
     });
@@ -70,11 +82,22 @@ function PieChart(props) {
               }
             }
           }
+<<<<<<< HEAD
 
           }
         />
         <Moment className="chart__bottom chart__bottom--left" date={currentMonthLastDate} format='LL' />&nbsp;<strong>-</strong>&nbsp;
         <Moment className="chart__bottom" date={date} format='LL' />
+=======
+        }   
+        }
+      
+      
+      } 
+      />
+      <Moment className="chart__bottom chart__bottom--left" date={currentMonthLastDate} format='LL' />&nbsp;<strong>-</strong>&nbsp;
+      <Moment className="chart__bottom" date={lastDay} format='LL' />
+>>>>>>> 1deae7546ea46346b96f7042a21ceec2db321b68
       </div>
     </div>
   )
