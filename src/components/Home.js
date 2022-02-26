@@ -24,8 +24,8 @@ const Container = styled.div`
 function Home(props) {
   const { loadTransactions, loadBudget, addBudget, loadCategoryBudget } = useContext(GlobalContext);
   const [selectedCategory, setSelectedCategory] = useState("");
-  const {screenWidth, form} = props;
-  console.log("from homw",screenWidth);
+  const { screenWidth, form } = props;
+  console.log("from homw", screenWidth);
   useEffect(() => {
     let URL1 = `/api/transactions/1`;
     let URL2 = `/api/budget/1`;
@@ -72,52 +72,41 @@ function Home(props) {
   }, [])
 
   return (
-<<<<<<< HEAD
-    <div className="whole-app">
-
-      <div className="centre-content">
-=======
     <>
-    {screenWidth >= 1000 && 
-   <div className="whole-app">
-      
-      <div className="centre-content"> 
->>>>>>> 1deae7546ea46346b96f7042a21ceec2db321b68
-        <div className="shape">
-          <Container className="left--content">
-            <Balance />
-            <AddTransaction />
-          </Container>
-          <Container className="right-content" >
-            <BudgetExpense />
-            <PieChart setSelectedCategory={setSelectedCategory} />
-          </Container>
-        </div>
-<<<<<<< HEAD
-        {selectedCategory && <div className="side--content">
-          <ShowTransactions selectedCategory={selectedCategory} />
-=======
-            {selectedCategory && 
-            <div className="side--content">
-             <ShowTransactions selectedCategory={selectedCategory} />  
-            </div>}
-        </div>
-     </div>}
-     {screenWidth < 1000 && 
-      <div className="mobile--center">
-        <MobileHeader className="mobile-head" setSelectedCategory={setSelectedCategory}/>
-          {form && <AddTransactionMobile className="mobile-form"/>}
+      {screenWidth >= 1000 &&
+        <div className="whole-app">
+
+          <div className="centre-content">
+            <div className="shape">
+              <Container className="left--content">
+                <Balance />
+                <AddTransaction />
+              </Container>
+              <Container className="right-content" >
+                <BudgetExpense />
+                <PieChart setSelectedCategory={setSelectedCategory} />
+              </Container>
+            </div>
+            {selectedCategory &&
+              <div className="side--content">
+                <ShowTransactions selectedCategory={selectedCategory} />
+              </div>}
+          </div>
+        </div>}
+      {screenWidth < 1000 &&
+        <div className="mobile--center">
+          <MobileHeader className="mobile-head" setSelectedCategory={setSelectedCategory} />
+          {form && <AddTransactionMobile className="mobile-form" />}
           {!form && <div className="mobile-chart">
-           <MobilePieChart setSelectedCategory={setSelectedCategory}/>
+            <MobilePieChart setSelectedCategory={setSelectedCategory} />
+          </div>}
+          {selectedCategory &&
+            <div className="mobile-side--content">
+              <ShowTransactionsMobile selectedCategory={selectedCategory} />
+            </div>}
+
         </div>}
-        {selectedCategory && 
-        <div className="mobile-side--content">              
-          <ShowTransactionsMobile selectedCategory={selectedCategory} />
->>>>>>> 1deae7546ea46346b96f7042a21ceec2db321b68
-        </div>}
-     
-      </div>}
     </>
   );
- }
+}
 export default Home;
