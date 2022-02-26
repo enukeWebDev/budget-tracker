@@ -3,15 +3,15 @@ import axios from 'axios';
 import AppReducer from './AppReducer';
 
 
-   
+
 const initialState = {
 
   transactions: [],
-  users:[],
-  budgets: [  
+  users: [],
+  budgets: [
     {
       id: 1,
-      amount:0
+      amount: 0
     }
   ],
   categoryBudgets: []
@@ -56,14 +56,6 @@ export const GlobalProvider = ({ children }) => {
     });
   }
 
-
-  // function deleteBudget(id) {
-  //   dispatch({
-  //     type: 'DELETE_BUDGET',
-  //     payload: id
-  //   });
-  // }
-
   function addBudget(budget) {
     dispatch({
       type: 'ADD_BUDGET',
@@ -93,7 +85,7 @@ export const GlobalProvider = ({ children }) => {
 
   return (
     <GlobalContext.Provider value={{
-      budgets : state.budgets,
+      budgets: state.budgets,
       transactions: state.transactions,
       users: state.users,
       categoryBudgets: state.categoryBudgets,
@@ -111,9 +103,3 @@ export const GlobalProvider = ({ children }) => {
   )
 
 }
-
-// export const GlobalState = () => {
-//   return (
-//     <div>GlobalState</div>
-//   )
-// }

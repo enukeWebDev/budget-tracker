@@ -10,8 +10,6 @@
 
 body {
   margin: 0;
-  /* background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(./asset/image.png);
-  background-size: cover; */
 }
 
 .whole-app {
@@ -31,16 +29,12 @@ body {
 
 .shape {
   height: fit-content;
-  /* background-color: #EBEBEB; */
-  /* padding: 23px; */
   min-width:900px;
   margin-top:50px;
-  /* margin-bottom: -5px; */
   display: flex;
   flex-direction: row;
   margin-right:30px;
   padding-left: 2px;
-  /* border-radius: 25px; */
 }
 
 

@@ -59,7 +59,7 @@ function Home() {
             budget: parseFloat(item.budget),
             date: item.date
           }))
-          // console.log(refatoredTransactions);
+
           loadCategoryBudget(refatoredCategoriesBudgets);
         }
 
@@ -71,8 +71,8 @@ function Home() {
 
   return (
     <div className="whole-app">
-      
-      <div className="centre-content"> 
+
+      <div className="centre-content">
         <div className="shape">
           <Container className="left--content">
             <Balance />
@@ -80,11 +80,11 @@ function Home() {
           </Container>
           <Container className="right-content" >
             <BudgetExpense />
-            <PieChart setSelectedCategory ={setSelectedCategory}/>
+            <PieChart setSelectedCategory={setSelectedCategory} />
           </Container>
         </div>
-            {selectedCategory && <div className="side--content">
-             <ShowTransactions selectedCategory={selectedCategory} />
+        {selectedCategory && <div className="side--content">
+          <ShowTransactions selectedCategory={selectedCategory} />
         </div>}
       </div>
     </div >
