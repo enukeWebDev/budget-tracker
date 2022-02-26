@@ -75,8 +75,6 @@ function MobilePieChart(props){
       
       } 
       />
-      {/* <Moment className="chart__bottom chart__bottom--left" date={currentMonthLastDate} format='LL' />&nbsp;<strong>-</strong>&nbsp;
-      <Moment className="chart__bottom" date={date} format='LL' /> */}
       </div>
     </div>
   )

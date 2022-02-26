@@ -20,7 +20,7 @@ function Header(props) {
         </p>}
         {transactions.length === 1 &&
         <p>
-          {transactions.length} Transaction
+        {transactions.length} Transaction
         </p>}
        </div>
     

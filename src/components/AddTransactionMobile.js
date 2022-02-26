@@ -114,7 +114,6 @@ export const AddTransactionMobile = () => {
           <select >
             <option value="Expense">Expense</option>  
             <option value="Budget">Total Budget</option>
-           {/* { budgets[0].amount >0 &&<option value="categoryBudget">Assign Budget to Categories </option>} */}
           </select>
         </div>
 
@@ -125,8 +124,6 @@ export const AddTransactionMobile = () => {
           </select>
          
         </div>
-
-
 
         <div className="form-controls-mobile">
           <p className="form__label">

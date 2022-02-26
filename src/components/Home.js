@@ -91,13 +91,13 @@ function Home(props) {
             <div className="side--content">
              <ShowTransactions selectedCategory={selectedCategory} />  
             </div>}
-      </div>
-   </div>}
+        </div>
+     </div>}
      {screenWidth < 1000 && 
       <div className="mobile--center">
         <MobileHeader className="mobile-head" setSelectedCategory={setSelectedCategory}/>
           {form && <AddTransactionMobile className="mobile-form"/>}
-         {!form && <div className="mobile-chart">
+          {!form && <div className="mobile-chart">
            <MobilePieChart setSelectedCategory={setSelectedCategory}/>
         </div>}
         {selectedCategory && 

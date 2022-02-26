@@ -27,10 +27,6 @@ function Transaction() {
               { transactions.map(transaction => (<Content key={transaction.id} transaction={transaction} />)) }
             </ul>
           </main>
-
-        <div className='end-of-page'>
-        End of Page
-        </div>
       </div>
     </div>
   );

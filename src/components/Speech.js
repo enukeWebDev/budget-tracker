@@ -61,7 +61,6 @@ const Dictaphone = (props) => {
     browserSupportsSpeechRecognition
   } = useSpeechRecognition({commands});
 
- 
 
   if (!browserSupportsSpeechRecognition) {
     console.log("Browser doesn't support speech recognition");

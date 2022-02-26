@@ -12,17 +12,12 @@
   max-width:60%;
   margin-left: 70px;
 }
-.mobile-head {
-  /* max-width:60%;
-  margin-left: -5000px; */
-}
 
 .mobile-head-date {
   font-size: 30px;
   font-weight:bold;
   align-items: center;
   margin-left: 40%;
-  /* color: whitesmoke; */
 }
 
 .counter-container-mobile {

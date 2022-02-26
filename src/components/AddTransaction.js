@@ -113,7 +113,6 @@ export const AddTransaction = () => {
           <select >
             <option value="Expense">Expense</option>  
             <option value="Budget">Total Budget</option>
-           {/* { budgets[0].amount >0 &&<option value="categoryBudget">Assign Budget to Categories </option>} */}
           </select>
         </div>
 
@@ -131,25 +130,6 @@ export const AddTransaction = () => {
           <p className="form__label">
           <label htmlFor="amount">Please Enter Amount<br /> </label>
           </p>
-            {/* {type === "Budget" && <label htmlFor="amount">Please Enter Amount<br /> </label>} */}
-            {/* {type === "categoryBudget" && <label htmlFor="amount">Please Select Amount <br /> </label>}
-          </p>
-         
-          {type === "categoryBudget" && <p className="slider--margin">
-          <Slider
-            aria-label="Always visible"
-            defaultValue={0}
-            value={amount}
-            min={0}
-            max={budgets[0].amount-categoryBudgets.reduce(function (acc, obj) { return acc + obj.budget; }, 0)}
-            valueLabelDisplay="on"
-            valueLabelDisplay="auto"
-            onChange={(e)=> setAmount(e.target.value)}
-           
-          /></p>}
-          {type === "categoryBudget" && <input type='number' step="0.1" className="form__input" value={amount} disabled={true} placeholder="Enter amount..." />} */}
-          {/* {type === "Expense"  &&<input type='number' step="0.1" className="form__input" value={amount} onChange={(e) => setAmount(e.target.value)} placeholder="Enter amount..." />}
-          {type === "Budget"  &&<input type='number' step="0.1" className="form__input" value={amount} onChange={(e) => setAmount(e.target.value)} placeholder="Enter amount..." />} */}
           <input type='number' step="0.1" className="form__input" value={amount} onChange={(e) => setAmount(e.target.value)} placeholder="Enter amount..." />
           {error && <p className="form__label color--red">{error}</p>}
           <br />
