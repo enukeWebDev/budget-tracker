@@ -30,7 +30,15 @@ Budget Tracker App is a full-stack application that allows users to plan their m
     - Utilize the voice command more
     - Link to actual/personal bank account 
     - Generate a separate chart for each categories
-    
+  
+## Some Screenshots of the Project After Completion
+
+1. !["MainDashboard"](https://github.com/enukeWebDev/budget-tracker/blob/main/src/asset/MainDashboard.png?raw=true)
+
+2. !["DarkMode"](https://github.com/enukeWebDev/budget-tracker/blob/main/src/asset/DarkMode.png?raw=true)
+
+3. !["Main"](https://github.com/enukeWebDev/budget-tracker/blob/main/src/asset/MainPage.png?raw=true)
+
 
 **Stack Tech and why we choose them:**
 
