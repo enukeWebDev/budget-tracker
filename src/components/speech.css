@@ -1,4 +1,7 @@
-.mic:hover{
+.mic {
+  padding-right: 5px;
+}
+.mic-up:hover{
  
   animation: tweeder 1s infinite ease;
 }

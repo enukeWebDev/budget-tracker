@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import { GlobalContext } from '../context/GlobalState';
 import './BudgetExpense.css'
 
-export const BudgetExpense = () => {
+export const BudgetExpenseMobile = () => {
 
   const { transactions , budgets} = useContext(GlobalContext);
   const amounts = transactions.map(transaction => transaction.amount);
@@ -10,7 +10,7 @@ export const BudgetExpense = () => {
   const expense = amounts.reduce((acc, item) => (acc += item), 0).toFixed(2);
 
   return (
-    <div className="counter-container">
+    <div className="counter-container-mobile">
 
       <div className="budget">
         <h4>Budget</h4>

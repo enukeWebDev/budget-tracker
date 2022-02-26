@@ -1,14 +1,18 @@
-import {React ,useState, useEffect}from 'react'
+import {React ,useState, useEffect, useContext}from 'react'
 import './Welcome.css'
-import Navbar from './navbarOld/Navbar'
 import MicIcon from '@mui/icons-material/Mic';
+import Navbar from './navbar/Navbar'
 import Dictaphone from './Speech.js'
-export default function Header () {
+import { GlobalContext } from '../context/GlobalState';
 
+export default function Header (props) {
+  const { transactions , budgets} = useContext(GlobalContext);
+  const amounts = transactions.map(transaction => transaction.amount);
+
+  const expense = amounts.reduce((acc, item) => (acc += item), 0).toFixed(2);
   const [topbar, setTopbar] = useState(true);
-  
-
-
+  const {screenWidth, form, openForm} = props;
+ 
   useEffect(() => {
     const location = window.location.pathname
     if (location === '/') {
@@ -21,11 +25,12 @@ export default function Header () {
   return (
     <>
    {topbar && <h2 className="welcome">
-      <Navbar />
-    <Dictaphone className="mic"/>
+      <Navbar /> 
+    <Dictaphone className="mic" screenWidth={screenWidth} form={form} openForm={openForm}/>
     
 
     </h2>}
     </>
+
   )
 }

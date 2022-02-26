@@ -112,8 +112,3 @@ export const GlobalProvider = ({ children }) => {
 
 }
 
-// export const GlobalState = () => {
-//   return (
-//     <div>GlobalState</div>
-//   )
-// }

@@ -1,0 +1,77 @@
+.new-transaction {
+  border-bottom: 1px solid #bbb;
+  padding-bottom: 10px;
+  margin-top: 20px;
+}
+
+.input-area-text-or-number {
+border: 1px solid #dedede;
+border-radius: 2px;
+display: block;
+font-size: 16px;
+padding: 10px;
+width: 100%;
+}
+
+select {
+cursor: pointer;
+background-color: #27372F;
+border: 1px solid #dedede;
+color: #fff;
+border-radius: 2px;
+display: block;
+font-size: 16px;
+padding: 10px;
+width: 100%;
+margin: 10px 0 15px;
+padding: 10px;
+}
+
+
+
+
+.amt {
+display: inline-block;
+margin: 10px 0;
+}
+
+
+
+.btn {
+cursor: pointer;
+background-color: #27372F;
+box-shadow: var(--box-shadow);
+color: #fff;
+border: 0;
+display: block;
+font-size: 16px;
+margin: 10px 0 30px;
+padding: 10px;
+width: 100%;
+}
+
+.btn:focus,
+.delete-btn:focus {
+outline: 0;
+}
+
+.form__label{
+font-size: 20px;
+}
+.form__input {
+font-size: 20px;
+padding: 5px;
+border: #27372F 2px solid;
+margin-bottom: 10px;
+width:100%;
+}
+
+.add-head-mobile{
+width:100%;
+}
+
+
+.form__date {
+visibility: hidden;
+margin-top: -6px;
+}

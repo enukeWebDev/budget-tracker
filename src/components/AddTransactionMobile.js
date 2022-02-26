@@ -1,11 +1,12 @@
 import axios from 'axios';
 import React, { useState, useContext, useEffect } from 'react';
 import { GlobalContext } from '../context/GlobalState';
-import './AddTransaction.css';
 import DatePicker from 'react-date-picker';
 import { v4 as uuid } from 'uuid';
+import './mobileform.css';
+import {Grid, Paper } from "@material-ui/core";
 
-export const AddTransaction = () => {
+export const AddTransactionMobile = () => {
   
 
   const [value, setValue] = useState(new Date());
@@ -105,18 +106,18 @@ export const AddTransaction = () => {
   
 
   return (
-    <>
-      <h3 className="add-head">Add New Transaction</h3>
+    <Paper className='mobile--form' elevation={10} style={{bgColor:"#B3CDD1"}}>
+      <h3 className="add-head-mobile">Add New Transaction</h3>
       <form onSubmit={onSubmit}>
 
-        <div className="form-control" onChange={handleType}>
+        <div className="form-control-mobile" onChange={handleType}>
           <select >
             <option value="Expense">Expense</option>  
             <option value="Budget">Total Budget</option>
           </select>
         </div>
 
-        <div className="form-control" >
+        <div className="form-control-mobile" >
           <select onChange={handleCategory} name="category" disabled={disable} className="select__cat--display">
             <option value="types">Please choose category...</option>
             {selectCatOptions}
@@ -124,12 +125,11 @@ export const AddTransaction = () => {
          
         </div>
 
-
-
-        <div className="form-controls">
+        <div className="form-controls-mobile">
           <p className="form__label">
           <label htmlFor="amount">Please Enter Amount<br /> </label>
           </p>
+
           <input type='number' step="0.1" className="form__input" value={amount} onChange={(e) => setAmount(e.target.value)} placeholder="Enter amount..." />
           {error && <p className="form__label color--red">{error}</p>}
           <br />
@@ -141,6 +141,6 @@ export const AddTransaction = () => {
         {type === "categoryBudget" &&<button className="btn" >Assign Budget to {category || "..."}</button>}
 
       </form>
-    </>
+    </Paper>
   )
 }

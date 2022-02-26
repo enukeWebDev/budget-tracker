@@ -20,36 +20,12 @@ const Toggle = styled.div`
   transition: all .5s ease;
 `;
 
-// const Page = styled.div`
-//   display: flex;
-//   justify-content: center;
-//   align-items: center;
-//   height: 100vh;
-//   width: 100%;
-//   background-color: ${props => props.theme.pageBackground};
-//   transition: all .5s ease;
-// `;
-
-// const Container = styled.div`
-//   display: flex;
-//   flex-direction: column;
-//   align-items: end;
-//   padding: 30px;
-//   background-color: ${props => props.theme.pageBackground};
-//   transition: all .5s ease;
-// `;
-
 const Container = styled.div`
   display: flex;
   flex-direction: column;
   align-items: end;
   
 `;
-
-// const Title = styled.h1`
-//   color: ${props => props.theme.titleColor};
-//   transition: all .5s ease;
-// `;
 
 function DarkLightMode(props) {
   function changeTheme() {
@@ -71,8 +47,6 @@ function DarkLightMode(props) {
       <Toggle onClick={changeTheme}>
         {icon}
       </Toggle>
-      {/* <Title>Simarjeet - Ren - Erick</Title> */}
-      {/* <Tagline>This is our awesome project for finals!</Tagline> */}
     </Container>
     // </Page>
   );

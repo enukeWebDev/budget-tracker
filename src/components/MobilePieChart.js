@@ -3,11 +3,10 @@ import Chart from 'react-apexcharts';
 import { GlobalContext } from '../context/GlobalState';
 import Moment from 'react-moment';
 
-function PieChart(props){
+function MobilePieChart(props){
  // const date  = new Date().toLocaleString() ;
   const { transactions , budgets} = useContext(GlobalContext);
   let date  = new Date();
-  const lastDay = new Date(date.getFullYear(), date.getMonth() + 1, 0);
   let currentMonthLastDate  = (new Date(date.getFullYear(), date.getMonth(), 1));
   
   const refactorForChart = (data) =>{
@@ -38,20 +37,21 @@ function PieChart(props){
   return (
     <div className="Home__page__chart">
       <div className="pie__chart__background--color">
-        <p className="chart__title "><span className="color--blue">Budget </span>&nbsp;vs<span className="color--red">Expenses</span> </p>
       <Chart
        className="chart"
         type="pie"
-        width={480}
-        height={480}
+        width={300}
+        height={300}
         series={series}
         options={{
           labels:labels,
           legend: {
-            fontSize: "18px"
+            show:false,
+            fontSize:"14x",
+
           },
         tooltip:{
-          // enabled: true,
+           enabled: true,
           y:{
             formatter:(val)=>{
               return `$${val}`;
@@ -75,11 +75,9 @@ function PieChart(props){
       
       } 
       />
-      <Moment className="chart__bottom chart__bottom--left" date={currentMonthLastDate} format='LL' />&nbsp;<strong>-</strong>&nbsp;
-      <Moment className="chart__bottom" date={lastDay} format='LL' />
       </div>
     </div>
   )
 }
 
-export default PieChart;
+export default MobilePieChart;
