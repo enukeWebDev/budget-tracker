@@ -2,7 +2,7 @@
 import Login from "./components/Login";
 import Signup from "./components/Signup";
 import Home from "./components/Home";
-import Transaction from "./components/TransactionHistory";
+import Transaction from "./components/TransactionHistoryold";
 import { Routes, Route } from "react-router-dom";
 import { GlobalProvider } from './context/GlobalState';
 import Welcome from './components/Welcome'
